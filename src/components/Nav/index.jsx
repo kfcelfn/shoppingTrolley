@@ -21,7 +21,7 @@ export default class Nav extends Component {
                   <NavLink to={item.to} exact className='clear-nav'>
                     <IconFont type={item.icon} />
                     <span>{item.title}</span>
-                    </NavLink>
+                  </NavLink>
                 </li>
               )
             })

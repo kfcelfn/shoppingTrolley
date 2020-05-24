@@ -27,12 +27,8 @@ export default class Section extends Component {
           <div className='user-image'>
             <Avatar size={64} icon="user" />
             <div className='nickname'>
-              <p>
-                <span>昵称</span>
-              </p>
-              <p>
-                <span>我的积分：{0}</span>
-              </p>
+              <p><span>昵称</span></p>
+              <p><span>我的积分：{0}</span></p>
             </div>
           </div>
         </header>
