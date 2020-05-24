@@ -1,17 +1,20 @@
-import loadable from '@/utils/loadable.js'
+import React, { Component } from 'react';
+import { BrowserRouter, Switch, Route } from "react-router-dom";
+import { Error, Nav } from './assembly';
 
-const Error = loadable( () => import('@/pages/404') );
-const Login = loadable( () => import('@/pages/login') );
+import '@/utils/rem'
+import '@/styles/index.less';
+import '@/utils/reset.css'  
 
-export default [
-  {
-    path:'/',
-    exact: true,
-    component: Login
-  },
-  {
-    path:'/404',
-    exact: true,
-    component: Error
-  },
-]
+export default class Router extends Component {
+  render() {
+    return (
+      <BrowserRouter>
+        <Switch> 
+          <Route path='/404' component={Error}/>     
+          <Route path='/' component={Nav}/>     
+        </Switch>
+      </BrowserRouter>
+    )
+  }
+}

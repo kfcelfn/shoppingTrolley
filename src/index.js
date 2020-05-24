@@ -4,17 +4,12 @@ import { Provider } from 'react-redux'
 import { persistStore } from 'redux-persist'   
 import { PersistGate } from 'redux-persist/lib/integration/react'; 
 import { store } from './store'
-import { renderRoutes } from 'react-router-config'
-import routers from './router/index.js'
-import { BrowserRouter } from 'react-router-dom'
-
+import Router from './router';  
 
 ReactDOM.render(
   <Provider store={store}>
-    <PersistGate loading={null} persistor={persistStore(store)}>
-      <BrowserRouter>
-      {renderRoutes(routers)}
-      </BrowserRouter>
+    <PersistGate loading={null} persistor={persistStore(store)}>  
+      <Router />
     </PersistGate>
   </Provider>,
   document.getElementById('root')
