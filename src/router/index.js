@@ -1,9 +1,9 @@
 import React, { Component } from 'react';
 import { BrowserRouter, Switch, Route } from "react-router-dom";
-import { Error } from './assembly';
+import { Error, Nav, Details} from './assembly';
 
 import '@/utils/rem'
-import '@/index.less';
+import '@/styles/index.less';
 import '@/utils/reset.css'  
 
 export default class Router extends Component {
@@ -11,7 +11,9 @@ export default class Router extends Component {
     return (
       <BrowserRouter>
         <Switch> 
+          <Route path='/details' component={ Details }></Route>
           <Route path='/404' component={Error}/>     
+          <Route path='/' component={Nav}/>     
         </Switch>
       </BrowserRouter>
     )
