@@ -9,6 +9,11 @@ const Cart = loadable( () => import('@/pages/cart') );
 const My = loadable( () => import('@/pages/my') );
 
 
+const DetailspageDet = loadable( () => import('@/pages/detailspageDet') );
+const DetailspageEvaluation = loadable( () => import('@/pages/detailspageEvaluation') );
+const DetailspageShop = loadable( () => import('@/pages/detailspageShop') );
+const Details = loadable( () => import('@/components/detailspage') );
+
 const Error = loadable( () => import('@/pages/404') );
 
 export {
@@ -17,4 +22,8 @@ export {
   Nav,
   Cart,
   My,
+  Details,
+  DetailspageDet,
+  DetailspageEvaluation,
+  DetailspageShop,
 }

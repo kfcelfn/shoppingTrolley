@@ -5,7 +5,7 @@ export default class Error extends Component {
   render() {
     return (
       <div className='page_error'>
-        404123
+        404
       </div>
     )
   }
