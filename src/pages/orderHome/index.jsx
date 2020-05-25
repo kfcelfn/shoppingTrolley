@@ -1,11 +1,16 @@
 import React, { Component } from 'react'
 import { Switch, Route, Redirect } from "react-router-dom";
+import { connect } from 'react-redux';
 import { OrderAll, OrderStayPay, OrderStayTake, OrderStayEvaluate } from '@/router/assembly'
 import Header from '@@/Header'
 import Nav from '@@/Nav'
+import { getAllData } from '@/actions/order'
 import './styles.less'
 
-export default class Order extends Component {
+export default @connect( () => { return{} },{
+  getAllData
+})
+class extends Component {
   state = {
     listData: [
       {id: 1, title: '全部订单', to: '/order/all'},
@@ -13,6 +18,10 @@ export default class Order extends Component {
       {id: 3, title: '代收货', to: '/order/take'},
       {id: 4, title: '待评价', to: '/order/evaluate'},
     ]
+  }
+  
+  componentDidMount () {
+    this.props.getAllData()
   }
 
   render() {
