@@ -1,4 +1,5 @@
-// import demo from '@/reducer/demo'
+import goods from '@/reducer/goods'
 
 export {
+  goods
 }
