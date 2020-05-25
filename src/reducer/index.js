@@ -1,4 +1,5 @@
-// import demo from '@/reducer/demo'
+import order from '@/reducer/order'
 
 export {
+  order
 }
