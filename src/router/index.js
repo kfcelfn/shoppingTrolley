@@ -5,15 +5,6 @@ const routes = [
   { path: '/login', component: type.Login },
   { path: '/register', component: type.Register },
   { path: '/find', component: type.Find },
-  {
-    path: "/",
-    component: type.Nav,
-    children: [
-      { path: '/cart', component: type.Cart },
-      { path: '/my', component: type.My },
-      { path: '/', component: type.Home }
-    ]
-  },
   { 
     path: '/order',
     component: type.Order,
@@ -29,6 +20,15 @@ const routes = [
     component: type.Classify,
     children: [
       { path: '/classify/shops/:cid', exact: true, component: type.Shops }
+    ]
+  },
+  {
+    path: "/",
+    component: type.Nav,
+    children: [
+      { path: '/cart', component: type.Cart },
+      { path: '/my', component: type.My },
+      { path: '/', component: type.Home }
     ]
   },
 ]

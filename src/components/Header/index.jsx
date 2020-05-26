@@ -1,7 +1,7 @@
 import React, { Component } from 'react'
 import { withRouter } from 'react-router-dom'
 import goback from '@/assets/goback.png'
-import './styles.less'
+import "./styles.less"
 
 /* 传入参数： 
  * isGoBack 返回，如果需要显示， 就传入show

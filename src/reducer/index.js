@@ -7,5 +7,5 @@ export {
   order,
   classify,
   shops,
-  find
+  find 
 }
