@@ -1,51 +1,43 @@
 import React, { Component } from 'react'
 import Banner from "@/components/Banner"
 import { Link } from "react-router-dom"
-import { banner , navApi , homeGoods , homeList } from '@/services/home'
+import { bannerData , navApiData , homeGoodsData , homeListData } from '../../actions/home'
+import { connect } from "react-redux"
 import HomeGoods from "./homeComp/homeGoods"
 import Header from "./header"
 import HomeList from "./homeList"
 import "./style.less"
 
-export default class index extends Component {
-	state = {
-			bannerData:[],
-			navData:[],
-			goodsData:[],
-			homelist:[]
+export default @connect(({ homes }) =>{
+	return {
+		bannerData:homes.banners,
+		navData:homes.navApi,
+		goodsData:homes.homeGoods,
+		homelist:homes.homeList
 	}
-	componentDidMount( ){
-		banner().then(res => {
-			if(res.code === 200){
-				this.setState({
-					bannerData:res.data
-			})
-		}
-		})
-		navApi().then(res => {
-			if(res.code === 200){
-				this.setState({
-						navData:res.data
-				})
-			}
-		})
-		homeGoods().then(res => {
-			if(res.code === 200){
-				this.setState({
-						goodsData:res.data
-				})
-			}
-		})
-		homeList().then(res => {
-			if(res.code === 200){
-				this.setState({
-						homelist:res.data
-				})
-			}
-		})
+},
+{
+	bannerData ,
+	navApiData , 
+	homeGoodsData , 
+	homeListData
+}
+)
+class index extends Component {
+
+	componentDidMount () {
+		const { bannerData , 
+						navApiData , 
+						homeGoodsData , 
+						homeListData
+					} = this.props
+					bannerData()
+					navApiData()
+					homeGoodsData()
+					homeListData()
 	}
 render () {
-	let { bannerData , navData , goodsData , homelist} = this.state
+	let { bannerData , navData , goodsData , homelist} = this.props
 	return (
 		<div className="pages_home">
 			<div className="pages_home_header">
