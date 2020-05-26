@@ -2,7 +2,7 @@ import loadable from '@/utils/loadable.js'
 /** 错误
  * Error 404
 */
-export const Error = loadable(() => import('@/pages/404'));
+export const Error = loadable(() => import('@/pages/error'));
 
 /** layout布局
  *  Nav底部导航 Home首页 Cart购物车 My我的
@@ -21,6 +21,7 @@ export const OrderStayTake = loadable(() => import('@/pages/orderStayTake'));
 export const OrderStayEvaluate = loadable(() => import('@/pages/orderStayEvaluate'));
 export const OrderAll = loadable(() => import('@/pages/orderAll')); 
 
+
 /** 分类
  *  Classify 分类首页 Shops分类右侧主体
 */
@@ -33,3 +34,7 @@ export const Shops = loadable(() => import('@/pages/shops'));
 export const Login = loadable(() => import('@/pages/login'));
 export const Register = loadable(() => import('@/pages/register'));
 
+/** 搜索页面 
+ *  详情
+*/
+export const Find = loadable(() => import('@/pages/find'));
