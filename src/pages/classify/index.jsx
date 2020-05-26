@@ -1,9 +1,9 @@
 import React, { Component } from 'react'
-import shops from '@/pages/shops'
 import goback from '@/assets/goback.png'
 import HeaderInput from '@@/HeaderInput'
 import { connect } from 'react-redux'
-import { Route, Switch, NavLink, Redirect } from 'react-router-dom'
+import { NavLink, Redirect } from 'react-router-dom'
+import { renderRoutes } from 'react-router-config'
 import { getClassifyData } from '@/actions/classify'
 import './styles.less'
 
@@ -50,10 +50,8 @@ class Index extends Component {
           </div>
           <div className="section-right">
             {/* 二级路由 */}
-            <Switch>
-              <Route path="/classify/shops/:cid" component={shops} />
-              <Redirect from="/classify" to="classify/shops/492" />
-            </Switch>
+            {renderRoutes(this.props.route.children)}
+            <Redirect from='/classify' to='/classify/shops/492' />
           </div>
         </div>
       </div>
