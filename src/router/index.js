@@ -1,20 +1,10 @@
-import React, { Component } from 'react'
-import { Switch , Redirect , Route , BrowserRouter } from "react-router-dom"
-import { Home } from "./assembly"
-import "@/utils/rem"
-import "@/utils/reset.css"
+import { Error, Nav, Order, Goods } from './assembly';
 
+const routes = [
+  { path: '/404', component: Error },
+  { path: '/order', component: Order },
+  { path: '/Goods', component: Goods },
+  { path: '/', component: Nav },
+]
 
-export default class Router extends Component {
-    render() {
-        return (
-            <div className="router">
-                <BrowserRouter>
-                    <Switch>
-                        <Route path="/" component={Home}/>
-                    </Switch>
-                </BrowserRouter>
-            </div>
-        )
-    }
-}
+export default routes
