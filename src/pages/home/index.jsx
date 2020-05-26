@@ -1,8 +1,8 @@
 import React, { Component } from 'react'
 import Banner from "@/components/Banner"
-import { BANNER , NAV_API , HOME_GOODS , home_list } from '@/services/api'
+import { banner , navApi , homeGoods , homeList } from '@/services/home'
 import HomeGoods from "./homeComp/homeGoods"
-import Header from "../../components/Header"
+import Header from "@/components/HomeHeader"
 import HomeList from "./homeList"
 import "./style.less"
 
@@ -14,28 +14,28 @@ export default class index extends Component {
         homelist:[]
     }
     componentDidMount( ){
-        BANNER().then(res => {
+        banner().then(res => {
             if(res.code === 200){
                 this.setState({
                     bannerData:res.data
                 })
             }
         })
-        NAV_API().then(res => {
+        navApi().then(res => {
             if(res.code === 200){
                 this.setState({
                     navData:res.data
                 })
             }
         })
-        HOME_GOODS().then(res => {
+        homeGoods().then(res => {
             if(res.code === 200){
                 this.setState({
                     goodsData:res.data
                 })
             }
         })
-        home_list().then(res => {
+        homeList().then(res => {
             if(res.code === 200){
                 this.setState({
                     homelist:res.data

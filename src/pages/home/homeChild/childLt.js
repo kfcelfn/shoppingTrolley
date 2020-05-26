@@ -12,36 +12,36 @@ export default class ChildLt extends Component {
             <div className="home_Goods_chilLt">
                 <div className="home_GoodsBoyLt">
                     <ul>
-                        <li> { one[0].title } </li>
-                        <li> ￥{ one[0].price } </li>
-                        <li> <img src={one[0].image}/> </li>
+                        <li> {one[0].title} </li>
+                        <li> ￥{one[0].price} </li>
+                        <li> <img src={one[0].image} /> </li>
                     </ul>
                     <div className="home_GoodsBoyRig">
-                     {
-                         two.map((v,i) => {
-                             return  <dl key={v.gid}>
-                                        <dd>
+                        {
+                            two.map((v, i) => {
+                                return <dl key={v.gid}>
+                                    <dd>
                                         <p> {v.title} </p>
                                         <p> 精品挑选 </p>
-                                        </dd>
-                                        <dt><img src={v.image} /></dt>
-                                    </dl>
-                         })
-                     }
+                                    </dd>
+                                    <dt><img src={v.image} /></dt>
+                                </dl>
+                            })
+                        }
                     </div>
                 </div>
                 <div className="home_GoodsBoyfoo">
-                {
-                    bottom01.map((item,index) => {
-                        return<div className="home_Goodsfooter" key={item.gid}>
+                    {
+                        bottom01.map((item, index) => {
+                            return <div className="home_Goodsfooter" key={item.gid}>
                                 <p> {item.title} </p>
                                 <p><img src={item.image} /></p>
                                 <p>￥{item.price} </p>
                             </div>
-                    })
-                }
-                </div> 
-                    
+                        })
+                    }
+                </div>
+
             </div>
         )
     }

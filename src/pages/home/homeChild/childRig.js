@@ -12,7 +12,7 @@ export default class ChildLt extends Component {
                 <div className="home_childRig">
                 {
                     one.map((v,i) => {
-                        return <ul>
+                        return <ul key={i}>
                                     <li> { v.title } </li>
                                     <li> 火爆开售 </li>
                                     <li> <img src={v.image}/> </li>

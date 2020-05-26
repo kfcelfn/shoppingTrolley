@@ -1,17 +1,40 @@
 import React, { Component } from 'react'
-import { Input } from 'antd';
-import { UnorderedListOutlined , SearchOutlined } from '@ant-design/icons';
-import "./header.less"
-export default class index extends Component {
-    render() {
-        return (
-            <div className="header">    
-                <div className="headerTop">
-                    <p><UnorderedListOutlined style={{fontSize:"0.4rem"}}/></p> 
-                    <p><Input placeholder="请输入宝贝名称" prefix={<SearchOutlined />} /></p>
-                    <p>登录</p>
-                </div>
-            </div>
-        )
+import { withRouter } from 'react-router-dom'
+import goback from '@/assets/goback.png'
+import './styles.less'
+
+/* 传入参数： 
+ * goBack 返回，如果需要显示， 就传入show
+ * titile 标题 
+ * save 保存
+*/
+export default @withRouter
+class extends Component {
+  goBack = () => {
+    const { title } = this.props
+    
+    if( title == '全部订单' ){
+      this.props.history.push('/my')
+    }else{
+      this.props.history.go(-1)
     }
+  }
+
+  render() {
+    const { isGoBack='', title='', save='' } = this.props
+    
+    return (
+      <div className='components-header'>
+        <p className='goBack'>
+          <img 
+            src={goback} 
+            onClick={this.goBack} 
+            className={ !isGoBack ? 'hide' : 'show' } 
+          />
+        </p>
+        <h2>{title}</h2>
+        <h6 className='save'>{save}</h6>
+      </div>
+    )
+  }
 }

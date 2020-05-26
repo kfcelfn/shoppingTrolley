@@ -1,20 +1,45 @@
-import Loadable from '@/utils/loadable'
+import loadable from '@/utils/loadable.js'
 
-const Nav = Loadable(() => import('@/layout/Nav')); // layout
-const Home = Loadable(() => import('@/pages/home'));
-const Cart = Loadable(() => import('@/pages/cart'));
-const My = Loadable(() => import('@/pages/my'));
-const Classify = Loadable(() => import('@/pages/classify'));
-const Shops = Loadable(() => import('@/pages/shops'));
+/** layout布局
+ *  Nav底部导航 Home首页 Cart购物车 My我的
+*/
+const Nav = loadable(() => import('@/layout/Nav'));
+const Home = loadable(() => import('@/pages/home'));
+const Cart = loadable(() => import('@/pages/cart'));
+const My = loadable(() => import('@/pages/my'));
+
+/** 订单页面  
+ *  Order首页 OrderStayPay待支付 OrderStayTake待收货  OrderStayEvaluate待评价 OrderAll全部订单主体页面
+*/
+
+const Order = loadable(() => import('@/pages/orderHome'));
+const OrderStayPay = loadable(() => import('@/pages/orderStayPay'));
+const OrderStayTake = loadable(() => import('@/pages/orderStayTake'));
+const OrderStayEvaluate = loadable(() => import('@/pages/orderStayEvaluate'));
+const OrderAll = loadable(() => import('@/pages/orderAll')); 
+
+/** 分类页面 
+ *  Classify 分类首页 Shops分类右侧主体
+*/
+const Classify = loadable(() => import('@/pages/classify'));
+const Shops = loadable(() => import('@/pages/shops'));
+
+/** 搜索页面 
+ *  详情
+*/
+const Find = loadable(() => import('@/pages/find'));
 
 export {
   Home,
   Nav,
   Cart,
   My,
+  Order,
+  OrderStayPay,
+  OrderStayTake,
+  OrderStayEvaluate,
+  OrderAll,
+  Shops,
   Classify,
-  Shops
+  Find
 }
-
-
-

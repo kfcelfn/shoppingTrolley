@@ -1,13 +1,8 @@
-import React, { Component } from 'react';
-import { BrowserRouter } from "react-router-dom";
-import { renderRoutes } from 'react-router-config'
-import { Nav, Classify, Shops, Cart, Home, My } from './assembly';
-
-import '@/utils/rem'
-import '@/styles/index.less';
-import '@/utils/reset.css'
+import { Nav, Order, Classify, Shops, Cart, Home, My, Find } from './assembly';
 
 const routes = [
+  { path: '/order', component: Order },
+  { path: '/find', component: Find },
   {
     path: '/classify',
     component: Classify,
@@ -39,13 +34,4 @@ const routes = [
   }
 ]
 
-export default class Router extends Component {
-  render() {
-    return (
-      <BrowserRouter>
-        {renderRoutes(routes)}
-      </BrowserRouter>
-    )
-  }
-}
-
+export default routes
