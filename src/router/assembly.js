@@ -24,7 +24,6 @@ const OrderStayEvaluate = loadable( () => import('@/pages/orderStayEvaluate') 
 /**
  * 分类页面 
 */
-const Goods = loadable( () => import('@/pages/goods'));
 const Shops = loadable( () => import('@/pages/shops'));
 
 export {
@@ -38,6 +37,5 @@ export {
   OrderStayTake,
   OrderStayEvaluate,
   OrderAll,
-  Goods,
   Shops,
 }
