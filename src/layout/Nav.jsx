@@ -1,10 +1,10 @@
 import React, { Component } from 'react';
-import { Switch, Route } from "react-router-dom";
-import { Home, Cart, My } from '@/router/assembly';
+import { renderRoutes } from 'react-router-config'
 import Nav from '@@/Nav'
 import './styles.less'
 
 export default class Basic extends Component {
+  
   state = {
     navData: [
       {id: 1, title: '首页', icon:'icon-shouye', to: '/'},
@@ -15,17 +15,11 @@ export default class Basic extends Component {
 
   render() {
     const { navData } = this.state
-
     return (
       <div className='layout-nav'>
         <section className='section'>
-          <Switch>
-            <Route path='/cart' component={ Cart } />
-            <Route path='/my' component={ My } />
-            <Route path='/' component={ Home } />
-          </Switch>
+          {renderRoutes(this.props.route.children)}
         </section>
-
         <Nav navData={navData} />
       </div>
     )
