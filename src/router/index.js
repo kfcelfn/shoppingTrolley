@@ -18,18 +18,9 @@ const routes = [
     path: "/",
     component: Nav,
     children: [
-      {
-        path: '/cart',
-        component: Cart
-      },
-      {
-        path: '/my',
-        component: My
-      },
-      {
-        path: '/',
-        component: Home
-      }
+      { path: '/cart', component: Cart },
+      { path: '/my',component: My },
+      { path: '/',component: Home }
     ]
   }
 ]
