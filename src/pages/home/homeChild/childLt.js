@@ -19,7 +19,7 @@ export default class ChildLt extends Component {
           <div className="home_GoodsBoyRig">
             {
               two.map((v, i) => {
-                return <dl key={i}>
+                return <dl key={v.gid}>
                   <dd>
                     <p> {v.title} </p>
                     <p> 精品挑选 </p>
@@ -33,7 +33,7 @@ export default class ChildLt extends Component {
         <div className="home_GoodsBoyfoo">
           {
             bottom01.map((item, index) => {
-              return <div className="home_Goodsfooter" key={index}>
+              return <div className="home_Goodsfooter" key={item.gid}>
                 <p> {item.title} </p>
                 <p><img src={item.image} /></p>
                 <p>￥{item.price} </p>

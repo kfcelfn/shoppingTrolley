@@ -7,9 +7,9 @@ export default class Basic extends Component {
   
   state = {
     navData: [
-      {id: 1, title: '首页', icon:'icon-shouye', to: '/'},
-      {id: 2, title: '购物车', icon:'icon-gouwuche', to: '/cart'},
-      {id: 3, title: '我的', icon:'icon-wode', to: '/my'},
+      { id: 1, title: '首页', icon: 'icon-shouye', to: '/' },
+      { id: 2, title: '购物车', icon: 'icon-gouwuche', to: '/cart' },
+      { id: 3, title: '我的', icon: 'icon-wode', to: '/my' }
     ]
   }
 
