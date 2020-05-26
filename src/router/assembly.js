@@ -1,14 +1,11 @@
-import loadable from '@/utils/loadable.js'
+import Loadable from '@/utils/loadable'
 
-/**
- * layout
-*/
-const Nav = loadable(() => import('@/layout/Nav'));
-const Home = loadable( () => import('@/pages/home'));
-const Cart = loadable( () => import('@/pages/cart'));
-const My = loadable( () => import('@/pages/my'));
-const Classify = loadable( () => import('@/pages/classify'));
-const Shops = loadable( () => import('@/pages/shops'));
+const Nav = Loadable(() => import('@/layout/Nav')); // layout
+const Home = Loadable(() => import('@/pages/home'));
+const Cart = Loadable(() => import('@/pages/cart'));
+const My = Loadable(() => import('@/pages/my'));
+const Classify = Loadable(() => import('@/pages/classify'));
+const Shops = Loadable(() => import('@/pages/shops'));
 
 export {
   Home,
@@ -18,3 +15,6 @@ export {
   Classify,
   Shops
 }
+
+
+
