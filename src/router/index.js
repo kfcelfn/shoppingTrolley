@@ -1,35 +1,33 @@
-import { Error, Nav, Order, Classify, Shops, Cart, Home, My } from './assembly';
+import * as type from './assembly';
 
 const routes = [
-  { path: '/404', component: Error },
-  { path: '/order', component: Order },
+  { path: '/404', component: type.Error },
+  { path: '/login', component: type.Login },
+  { path: '/register', component: type.Register },
+  { 
+    path: '/order',
+    component: type.Order,
+    children: [
+      { path: '/order/all', component: type.OrderAll },
+      { path: '/order/pay', component: type.OrderStayPay },
+      { path: '/order/take', component: type.OrderStayTake },
+      { path: '/order/evaluate', component: type.OrderStayEvaluate },
+    ]
+  },
   {
     path: '/classify',
-    component: Classify,
+    component: type.Classify,
     children: [
-      {
-        path: '/classify/shops/:cid',
-        exact: true,
-        component: Shops
-      }
+      { path: '/classify/shops/:cid', exact: true, component: type.Shops }
     ]
   },
   {
     path: "/",
-    component: Nav,
+    component: type.Nav,
     children: [
-      {
-        path: '/cart',
-        component: Cart
-      },
-      {
-        path: '/my',
-        component: My
-      },
-      {
-        path: '/',
-        component: Home
-      }
+      { path: '/cart', component: type.Cart },
+      { path: '/my', component: type.My },
+      { path: '/', component: type.Home }
     ]
   }
 ]

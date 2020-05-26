@@ -1,14 +1,22 @@
 import React, { Component } from 'react'
-import { Switch, Route, Redirect } from "react-router-dom";
+import { Redirect } from "react-router-dom";
+import { renderRoutes } from 'react-router-config'
 import { connect } from 'react-redux';
-import { OrderAll, OrderStayPay, OrderStayTake, OrderStayEvaluate } from '@/router/assembly'
 import Header from '@@/Header'
 import Nav from '@@/Nav'
-import { getAllData } from '@/actions/order'
+import { getAllData, getStayEvaluateData } from '@/actions/order'
 import './styles.less'
 
+const obj = {
+  '/order/all': '全部订单',
+  '/order/pay': '待支付',
+  '/order/take': '待收货',
+  '/order/evaluate': '待评价',
+}
+
 export default @connect( () => { return{} },{
-  getAllData
+  getAllData,
+  getStayEvaluateData,
 })
 class extends Component {
   state = {
@@ -22,24 +30,22 @@ class extends Component {
   
   componentDidMount () {
     this.props.getAllData()
+    this.props.getStayEvaluateData()
   }
 
   render() {
     const { listData } = this.state
+    const { pathname } = this.props.location
+
     return (
       <div className='pages-order'>
-        <Header isGoBack='show' title='全部订单' />
+        <Header isGoBack='show' title={obj[pathname]} />
         
         <Nav navData={listData} isShow={false} />
 
         <section className='section'>
-          <Switch>
-            <Route path='/order/all' component={ OrderAll } />
-            <Route path='/order/pay' component={ OrderStayPay } />
-            <Route path='/order/take' component={ OrderStayTake } />
-            <Route path='/order/evaluate' component={ OrderStayEvaluate } />
-            <Redirect to='/order/all' exact/>
-          </Switch>
+          {renderRoutes(this.props.route.children)}
+          {/* <Redirect to='/order/all' /> */}
         </section>
       </div>
     )

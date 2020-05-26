@@ -8,9 +8,9 @@ export default @withRouter
 class extends Component {
   state = {
     orderData: [
-      {id: 1, title: '待支付', icon:'icon-daizhifu', to: '/'},
-      {id: 2, title: '待收货', icon:'icon-daishouhuo', to: '/'},
-      {id: 3, title: '待评价', icon:'icon-daipingjia', to: '/'},
+      {id: 1, title: '待支付', icon:'icon-daizhifu', to: '/order/pay'},
+      {id: 2, title: '待收货', icon:'icon-daishouhuo', to: '/order/take'},
+      {id: 3, title: '待评价', icon:'icon-daipingjia', to: '/order/evaluate'},
     ],
     userInformation: [
       {id: 1, title: '个人资料', to: ''},
@@ -38,7 +38,7 @@ class extends Component {
 
         <div className='order-form'>
           <span>全部订单</span>
-          <span onClick={()=>this.props.history.push('/order')}>查看全部订单 ></span>
+          <span onClick={()=>this.props.history.push('/order/all')}>查看全部订单 ></span>
         </div>
 
         <div className='order-status'>
