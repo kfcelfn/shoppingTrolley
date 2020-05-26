@@ -1,13 +1,14 @@
 import React, { Component } from 'react'
 import { connect } from 'react-redux'
-import { getShopData } from '@/actions/goods'
+import { getShopData } from '@/actions/shops'
 import './styles.less'
 
 @connect(state => {
   return {
-    shopData: state.goods.shopData
+    shopData: state.shops.shopData
   }
 }, {
+  //action
   getShopData
 })
 
@@ -40,37 +41,39 @@ class Index extends Component {
   render() {
     const { shopData } = this.props
     return (
-      <div className='pages-shops'>
+      <div className="pages-shops">
         {
           shopData instanceof Array && shopData.length ?
             shopData.map(item => {
               return (
-                <div className='shop-box' key={item.cid}>
-                  <p className='top-title'>
+                <div className="shop-box" key={item.cid}>
+                  <p className="top-title">
                     {item.title}
                   </p>
-                  <div className='end-box'>
+                  <div className="end-box">
                     {
                       item.goods ?
-                      item.goods.map(childItem => {
-                        return (
-                          <dl key={childItem.gid}>
-                            <dt>
-                              <div className='img-box'>
-                                <img src={childItem.image} alt="" />
-                              </div>
-                            </dt>
-                            <dd>
-                              <span>{childItem.title}</span>
-                            </dd>
-                          </dl>
-                        )
-                      }) : null
+                        item.goods.map(childItem => {
+                          return (
+                            <dl key={childItem.gid}>
+                              <dt>
+                                <div className="img-box">
+                                  <img src={childItem.image} alt="" />
+                                </div>
+                              </dt>
+                              <dd>
+                                <span>{childItem.title}</span>
+                              </dd>
+                            </dl>
+                          )
+                        }) : <p style={{ paddingLeft: "4.5%", fontSize: ".23rem" }}>
+                              not-data
+                             </p>
                     }
                   </div>
                 </div>
               )
-            }) : <p className='not-data'>没有数据</p>
+            }) : <p className="not-data">没有数据</p>
         }
       </div>
     )
