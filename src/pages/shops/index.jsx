@@ -1,11 +1,11 @@
 import React, { Component } from 'react'
 import { connect } from 'react-redux'
-import { getShopData } from '@/actions/goods'
+import { getShopData } from '@/actions/shops'
 import './styles.less'
 
 @connect(state => {
   return {
-    shopData: state.goods.shopData
+    shopData: state.shops.shopData
   }
 }, {
   getShopData

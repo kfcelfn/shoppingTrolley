@@ -1,7 +1,9 @@
 import order from '@/reducer/order'
-import goods from '@/reducer/goods'
+import classify from '@/reducer/classify'
+import shops from '@/reducer/shops'
 
 export {
   order,
-  goods
+  classify,
+  shops 
 }
