@@ -22,9 +22,9 @@ const OrderStayEvaluate = loadable(() => import('@/pages/orderStayEvaluate'));
 const OrderAll = loadable(() => import('@/pages/orderAll')); 
 
 /** 分类页面 
- *  Goods 分类首页 Shops分类右侧主体
+ *  Classify 分类首页 Shops分类右侧主体
 */
-const Goods = loadable(() => import('@/pages/goods'));
+const Classify = loadable(() => import('@/pages/classify'));
 const Shops = loadable(() => import('@/pages/shops'));
 
 export {
@@ -38,6 +38,6 @@ export {
   OrderStayTake,
   OrderStayEvaluate,
   OrderAll,
-  Goods,
   Shops,
+  Classify,
 }
