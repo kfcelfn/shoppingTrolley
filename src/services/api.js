@@ -11,3 +11,6 @@ export const NAV_API = () =>{
 export const HOME_GOODS = () =>{
   return get("http://vueshop.glbuys.com/api/home/index/goodsLevel?token=1ec949a15fb709370f")
 }
+export const home_list = () =>{
+  return get("http://vueshop.glbuys.com/api/home/index/recom?token=1ec949a15fb709370f")
+}
