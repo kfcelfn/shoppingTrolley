@@ -4,7 +4,6 @@ import Nav from '@@/Nav'
 import './styles.less'
 
 export default class Basic extends Component {
-  
   state = {
     navData: [
       { id: 1, title: '首页', icon: 'icon-shouye', to: '/' },
@@ -15,11 +14,12 @@ export default class Basic extends Component {
 
   render() {
     const { navData } = this.state
+
     return (
       <div className='layout-nav'>
-        <section className='section'>
+        <>
           {renderRoutes(this.props.route.children)}
-        </section>
+        </>
         <Nav navData={navData} />
       </div>
     )

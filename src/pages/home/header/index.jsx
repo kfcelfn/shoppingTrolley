@@ -5,9 +5,11 @@ import { Link } from "react-router-dom"
 import "./header.less"
 export default class index extends Component {
 	render() {
+		const { headerStyle } = this.props
+
 		return (
 			<div className="header">    
-				<div className="headerTop">
+				<div className={headerStyle ? 'headerTop' : 'headerTops'}>
 					<Link to="/classify">
 						<p><UnorderedListOutlined style={{fontSize:"0.4rem"}}/></p>
 					</Link>
