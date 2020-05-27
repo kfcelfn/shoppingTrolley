@@ -4,6 +4,8 @@ export default {
   // 我的订单
   orderAll: url+'/api/user/myorder/index?uid=696443691&status=all&token=1ec949a15fb709370f&page=1',
   orderStayEvaluate: url+'/api/user/myorder/reviewOrder?uid=696443691&page=1&token=1ec949a15fb709370f',
+  // 我的收藏
+  myEnshrine: url+`/api/user/fav/index?uid=696443691&token=1ec949a15fb709370f&page=1`,
   //产品分类页左侧菜单
   classifyListData: url+'/api/home/category/menu?token=1ec949a15fb709370f',
   findHotData: 'http://vueshop.glbuys.com/api/home/public/hotwords?token=1ec949a15fb709370f',

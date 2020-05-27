@@ -5,6 +5,7 @@ import find from '@/reducer/find'
 import homes from '@/reducer/home'
 import login from '@/reducer/login'
 import register from '@/reducer/register'
+import personalCenter from '@/reducer/personalCenter' //我的 个人中心
 
 export {
   order,
@@ -13,5 +14,6 @@ export {
   find,
   homes,
   login,
-  register
+  register,
+  personalCenter,
 }
