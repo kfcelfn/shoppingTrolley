@@ -15,14 +15,12 @@ export default @connect(({ homes }) =>{
 		goodsData:homes.homeGoods,
 		homelist:homes.homeList
 	}
-},
-{
+},{
 	bannerData ,
 	navApiData , 
 	homeGoodsData , 
 	homeListData
-}
-)
+})
 class index extends Component {
 
 	componentDidMount () {
@@ -53,9 +51,9 @@ render () {
 				{
 					navData.map((v,i) => {                        
 						return  <dl  key={v.cid}> 
-										<Link to="/classify" >
-												<dt><img src={v.image} /></dt>
-												<dd>{v.title}</dd> 
+										<Link to={`/classify/shops/${v.cid}`} >
+											<dt><img src={v.image} /></dt>
+											<dd>{v.title}</dd> 
 										</Link>
 										</dl>
 					})

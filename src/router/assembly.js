@@ -12,6 +12,16 @@ const Nav = loadable(() => import('@/layout/Nav'));
 const Home = loadable( () => import('@/pages/home') );
 const Cart = loadable( () => import('@/pages/cart') );
 const My = loadable( () => import('@/pages/my') );
+/*
+  home首页
+ */
+const Banner = loadable( () => import('@@/Banner') );//首页轮播
+const Homeheader = loadable( () => import('@/pages/home/header') );//首页头部组件
+const HomeGoods = loadable( () => import('@/pages/home/homeComp/homeGoods') );//首页Goods组件
+const childLt = loadable( () => import('@/pages/home/homeChild/childLt') );//首页Goods组件子组件
+const childRig = loadable( () => import('@/pages/home/homeChild/childRig') );//首页Goods组件子组件
+const HomeList = loadable( () => import('@/pages/home/homeList') );//首页为你推荐子路由
+
 
 /**
  * 订单页面 
@@ -43,5 +53,11 @@ export {
   DetailspageShop,
   OrderAll,
   Shops,
+  Banner,
+  Homeheader,
+  HomeGoods,
+  childLt,
+  childRig,
+  HomeList,
 }
 
