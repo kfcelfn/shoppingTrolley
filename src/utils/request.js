@@ -21,6 +21,7 @@ axios.interceptors.response.use(response => {
   }
   return response;
 }, error => {
+  
   switch (error.response.status) {
     case 404:
       // window.location.href = 'https://www.baidu.com'

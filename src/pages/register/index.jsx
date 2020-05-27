@@ -1,14 +1,24 @@
 import React, { Component } from 'react'
 import { Switch } from 'antd';
+import { connect } from 'react-redux'
+import { getRegInto } from '@/actions/register'
 import Header from '@@/Header'
 import './styles.less'
 
-export default class Register extends Component {
+@connect(state => {
+  return {
+
+  }
+}, {
+  getRegInto
+})
+
+class Register extends Component {
   onRegister = () => {
-    // console.log( this.authCode.value )
-    // console.log( this.cellphone.value )
-    // console.log( this.messageAuthCode.value )
-    // console.log( this.password.value )
+    const cellphone = this.cellphone.value
+    const password = this.password.value
+    const registerObj = { cellphone, password, vcode: ''  }
+    this.props.getRegInto(registerObj)
   }
 
   onChange = checked => {
@@ -44,3 +54,5 @@ export default class Register extends Component {
     )
   }
 }
+
+export default Register
