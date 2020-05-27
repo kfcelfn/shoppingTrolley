@@ -10,7 +10,7 @@ export default class index extends Component {
       <div className="header">
         <div className="headerTop">
           <p>
-            <NavLink to='/classify/shops/492'>
+            <NavLink to='/classify'>
               <UnorderedListOutlined style={{ fontSize: "0.4rem" }} />
             </NavLink>
           </p>

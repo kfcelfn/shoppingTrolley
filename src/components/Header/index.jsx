@@ -4,7 +4,7 @@ import goback from '@/assets/goback.png'
 import './styles.less'
 
 /* 传入参数： 
- * goBack 返回，如果需要显示， 就传入show
+ * isGoBack 返回，如果需要显示， 就传入show
  * titile 标题 
  * save 保存
 */

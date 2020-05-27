@@ -1,7 +1,8 @@
-import { ORDER_ALL } from '@/constants/actionTypes';
+import { ORDER_ALL, ORDER_STAYEVALUATE } from '@/constants/actionTypes';
  
 const defaultState = {
   orderAll: [],
+  orderStayEvaluate: []
 }
  
 export default function home (state = defaultState, action) {
@@ -10,6 +11,12 @@ export default function home (state = defaultState, action) {
       return {
         ...state,
         orderAll: action.payload.data
+      }
+    case ORDER_STAYEVALUATE:
+      console.log(action)
+      return {
+        ...state,
+        orderStayEvaluate: action.payload.data
       }
  
     default:

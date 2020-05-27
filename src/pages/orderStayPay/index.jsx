@@ -1,5 +1,4 @@
 import React, { Component } from 'react'
-import './styles.less'
 
 export default class orderStayPay extends Component {
   render() {
