@@ -5,6 +5,11 @@ const routes = [
   { path: '/login', component: type.Login },
   { path: '/register', component: type.Register },
   { path: '/find', component: type.Find },
+  { path: '/bindtel', component: type.MyBindTel },
+  { path: '/place', component: type.MyPlace },
+  { path: '/enshrine', component: type.MyEnshrine },
+  { path: '/editPassword', component: type.MyEditPassword },
+  { path: '/personalData', component: type.MyPersonalData },
   { 
     path: '/order',
     component: type.Order,

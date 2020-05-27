@@ -13,7 +13,6 @@ export default function home (state = defaultState, action) {
         orderAll: action.payload.data
       }
     case ORDER_STAYEVALUATE:
-      console.log(action)
       return {
         ...state,
         orderStayEvaluate: action.payload.data

@@ -13,12 +13,20 @@ class extends Component {
       {id: 3, title: '待评价', icon:'icon-daipingjia', to: '/order/evaluate'},
     ],
     userInformation: [
-      {id: 1, title: '个人资料', to: ''},
-      {id: 2, title: '收货地址', to: ''},
-      {id: 3, title: '绑定手机', to: '' },
-      {id: 4, title: '修改密码', to: '' },
-      {id: 5, title: '我的搜藏', to: '' },
+      {id: 1, title: '个人资料', to: '/personalData'},
+      {id: 2, title: '收货地址', to: '/place'},
+      {id: 3, title: '绑定手机', to: '/bindtel' },
+      {id: 4, title: '修改密码', to: '/editPassword' },
+      {id: 5, title: '我的收藏', to: '/enshrine' },
     ]
+  }
+
+  onLogin = () => {
+    this.props.history.push('/login')
+  }
+
+  editData = url => {
+    this.props.history.push(url)
   }
 
   render() {
@@ -49,7 +57,7 @@ class extends Component {
           {
             userInformation.map(item => {
               return (
-                <p key={item.id}>
+                <p key={item.id} onClick={()=>this.editData(item.to)}>
                   <span>{item.title}</span>
                   <span><i>></i></span>
                 </p>
@@ -59,7 +67,7 @@ class extends Component {
         </div>
 
         <div className='loginAndRegister'>
-          <p>登录/注册</p>
+          <p onClick={this.onLogin}>登录/注册</p>
         </div>
       </div>
     )
