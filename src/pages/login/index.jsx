@@ -5,7 +5,6 @@ import { getLoginInto } from '@/actions/login'
 import Header from '@@/Header'
 import './styles.less'
 
-
 @connect(({ login }) => {
   const { loginData } = login
   return {
@@ -21,7 +20,7 @@ class Login extends Component {
     pwdStatus: null
   }
 
-  myRegExp = (loginObj) => {
+  myRegExp = loginObj => {
     const { cellphone, password } = loginObj
     const phoneRegExp = /^1([38]\d|5[0-35-9]|7[3678])\d{8}$/
     const pwdRegExp =  /^[\w]{2,10}$/
