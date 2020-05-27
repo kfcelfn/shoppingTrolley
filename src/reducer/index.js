@@ -3,6 +3,8 @@ import classify from '@/reducer/classify'
 import shops from '@/reducer/shops'
 import find from '@/reducer/find'
 import homes from '@/reducer/home'
+import login from '@/reducer/login'
+import register from '@/reducer/register'
 
 export {
   order,
@@ -10,4 +12,6 @@ export {
   shops,
   find,
   homes,
+  login,
+  register
 }

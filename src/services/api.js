@@ -12,4 +12,8 @@ export default {
   navApi: url+'/api/home/index/nav?token=1ec949a15fb709370f',
   homeGoods: url+'/api/home/index/goodsLevel?token=1ec949a15fb709370f',
   homeList: url+'/api/home/index/recom?token=1ec949a15fb709370f',
+  //登录界面
+  loginInto: url+'/api/home/user/pwdlogin?token=1ec949a15fb709370f',
+  //注册页面
+  registerInto: url+'/api/home/user/reg?token=1ec949a15fb709370'
 }

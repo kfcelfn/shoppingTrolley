@@ -1,5 +1,6 @@
 import * as type from './assembly';
 
+
 const routes = [
   { path: '/404', component: type.Error },
   { path: '/login', component: type.Login },
@@ -35,7 +36,7 @@ const routes = [
       { path: '/my', component: type.My },
       { path: '/', component: type.Home }
     ]
-  },
+  }
 ]
 
 export default routes
