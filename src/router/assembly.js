@@ -37,13 +37,11 @@ export const MyEnshrine = loadable(() => import('@/pages/myEnshrine'));
 export const MyEditPassword = loadable(() => import('@/pages/myEditPassword'));
 export const MyPersonalData = loadable(() => import('@/pages/myPersonalData'));
 
-
 /** 分类
  *  Classify 分类首页 Shops分类右侧主体
 */
 export const Shops = loadable(() => import('@/pages/shops'));
 export const Classify = loadable(() => import('@/pages/classify'));
-
 
 /** 登录和注册 
  *  login登录 register注册
@@ -56,18 +54,10 @@ export const Register = loadable(() => import('@/pages/register'));
 */
 export const Find = loadable(() => import('@/pages/find'));
 
-
-export const DetailspageDet =loadable( () => import('@/pages/detailspageDet') );
-export const DetailspageEvaluation =loadable( () => import('@/pages/detailspageEvaluation') );
-export const DetailspageShop =loadable( () => import('@/pages/detailspageShop') );
 export const Details = loadable( () => import('@/pages/detailspage') );
 export const MaskLayer = loadable( () => import('@/pages/masklayer') ); 
+export const DetailspageDet =loadable( () => import('@/pages/detailspageDet') );
+export const DetailspageShop =loadable( () => import('@/pages/detailspageShop') );
+export const DetailspageEvaluation =loadable( () => import('@/pages/detailspageEvaluation') );
 
-
-  
-
-
-
-
-  
 
