@@ -59,14 +59,17 @@ class extends Component {
 		let { bannerDatas, navData, goodsData, homelist } = this.props
 
   return (
-    <div className="pages_home" onScrollCapture={(event) => this.onScrollEvent(event)}>
+    <div 
+      className="pages_home" 
+      onScrollCapture={(event) => this.onScrollEvent(event)}
+    >
       <div className="pages_home_header">
         <Header headerStyle={this.state.headerStyle} />
       </div>
       <div className="pages_home_banner">
         {
           bannerData.length ? <Banner bannerData={bannerDatas} />
-            : null
+                            : null
         }
       </div>
       <div className="pages_home_nav">

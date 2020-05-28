@@ -8,7 +8,7 @@ render() {
   
   return (
     <div className="HomeList">
-    <Link to="/detailspageShop">
+    <Link to={`/details/${data.gid}`}>
       <dl>
         <dt><img src={data.image}/></dt>
         <dd>

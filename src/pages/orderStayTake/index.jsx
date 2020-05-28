@@ -1,4 +1,5 @@
 import React, { Component } from 'react'
+import './styles.less'
 
 export default class orderStayTake extends Component {
   render() {
@@ -8,4 +9,4 @@ export default class orderStayTake extends Component {
       </div>
     )
   }
-}}
+}

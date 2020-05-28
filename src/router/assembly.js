@@ -1,4 +1,4 @@
-import loadable from '@/utils/loadable.js'
+import loadable from '@/utils/loadable.js'
 /** 错误
  * Error 404
 */

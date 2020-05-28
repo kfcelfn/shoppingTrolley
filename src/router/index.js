@@ -1,6 +1,5 @@
 import * as type from './assembly';
 
-
 const routes = [
   { path: '/404', component: type.Error },
   { path: '/login', component: type.Login },
@@ -12,6 +11,7 @@ const routes = [
   { path: '/editPassword', component: type.MyEditPassword },
   { path: '/personalData', component: type.MyPersonalData },
   { path: '/searchs', component: type.Searchs },
+  { path: '/details', component: type.Details },
   { 
     path: '/order',
     component: type.Order,

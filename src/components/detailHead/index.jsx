@@ -3,25 +3,25 @@ import { NavLink } from 'react-router-dom';
 import { Icon } from 'antd';
 import { connect } from 'react-redux'
 import { detailsAction1 } from '@/actions/details'
-import './style.css'
+import './styles.less'
 
 const IconFont = Icon.createFromIconfontCN({
     scriptUrl: '//at.alicdn.com/t/font_1838763_7ot685icidi.js',
-    },{
-        detailsAction1
-    });
+}, {
+    detailsAction1
+});
 
-    export default @connect(state => {
-        return {
-            data:state.details.data
-        }
-    })
+export default @connect(state => {
+    return {
+        data: state.details.data
+    }
+})
 class index extends Component {
-    fn=()=>{
+    fn = () => {
         window.history.back(-1)
     }
     render() {
-        const {data} = this.props
+        const { data } = this.props
         return (
             <div className='components-detailHead'>
                 <div className='components-detailHead-le'>
@@ -33,9 +33,9 @@ class index extends Component {
                     <NavLink exact to='/details/evaluation'><span>评价</span></NavLink>
                 </div>
                 <div className='components-detailHead-ri'>
-                    <NavLink exact to='/cart'><IconFont type='icon-gouwuche'/></NavLink>
+                    <NavLink exact to='/cart'><IconFont type='icon-gouwuche' /></NavLink>
                 </div>
             </div>
         )
-        }
     }
+}
