@@ -58,7 +58,6 @@ class extends Component {
 
   render() {
     const { orderData, userInformation, visible } = this.state
-    console.log(this.props.login) //用户数据
     const { nickname='', uid='', utype = 0 } = this.props.login
 
     return (
