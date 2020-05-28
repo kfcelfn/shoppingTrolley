@@ -1,69 +1,98 @@
 import React, { Component } from 'react'
-import Axios from 'axios'
-import Swiper from 'swiper'
-import 'swiper/css/swiper.min.css'
+import { Swiperimg, MaskLayer } from '@/router/assembly'
+import { NavLink } from 'react-router-dom'
+import { connect } from 'react-redux'
+import { detailsAction, commentAction} from '@/actions/details'
 import './style.css'
 
-export default class index extends Component {
-  state={
-      arr:[]
-  }
-  componentDidMount(){
-      //从父级页面接收gid
-      const gid=this.props.match.params.gid
-      //循环数据找出与传来的gid相等的数据
-      Axios.get('http://vueshop.glbuys.com/api/home/index/goodsLevel?token=1ec949a15fb709370f')
-          .then(res => {
-            const data=res.data.data
-            const newdata=[]
-            console.log(data)
-            data.filter(v => {
-              return newdata.push(v.items)
-            })
-            console.log(newdata.flat(Infinity))
-            const xx=newdata.flat(Infinity).filter(v => {
-              return v.gid==gid
-            })
-            console.log(xx)
-            this.setState({
-              arr:xx
-            })
-          })
-          var swiper = new Swiper('.swiper-container', {
-              pagination: {
-                  el: '.swiper-pagination',
-                  clickable: true,
-                  renderBullet: function (index, className) {
-                      return '<span class="' + className + '"></span>';
-                  },
-              },
-          });
-    
-  }
-  render() {
-    const {arr} = this.state
-    // const brr=arr[0]
-    // console.log(brr,111)
-    return (
-      <div className='pages-detailspageShop'>
-          <div className='pages-detailspageShop-body'>
-              <div className="swiper-container">
-                  <div className="swiper-wrapper">
-                      <div className="swiper-slide"><img src=''></img></div>
-                      <div className="swiper-slide">}</div>
-                  </div>
-                  <div className="swiper-pagination"></div>
-              </div>
-          </div>
-          <div className='pages-detailspageShop-foot'>
-              <div className='detailspageShop-foot-but1'>
-                  收藏
-              </div>
-              <div className='detailspageShop-foot-but2'>
-                  加入购物车
-              </div>
-          </div>
-      </div>
-    )
-  }
+
+export default @connect(state => {
+    return {
+        data:state.details.data,
+        commitData:state.details.commitData
+    }
+    },{
+        detailsAction,
+        commentAction
+    })
+class index extends Component {
+    state = {
+        gid:'',
+        show:false
+    }
+    fn = () => {
+        this.setState({
+            show:!this.state.show
+        })
+    }
+    componentDidMount(){
+        //从父级页面接收gid
+        const gid=this.props.match.params.gid
+        //将gid传给详情页商品的接口
+        this.props.detailsAction(gid)
+        //将gid传给详情页评论的接口
+        this.props.commentAction(gid)
+        this.setState({
+            gid:gid
+        })
+    }
+    render() {
+        const { data, commitData } =this.props
+        return (
+        <div className='pages-detailspageShop'>
+            {
+                <div className='pages-detailspageShop-body'>
+                    <Swiperimg img={data.images}/>
+                    <div className='detailspageShop-body-list'>
+                    <p>{data.title}</p>
+                    <p className='detailspageShop-body-price'>￥{data.price}</p>
+                    <p className='detailspageShop-body-Express'>
+                        <span>快递：{data.freight}元</span>
+                        <span>月销量{data.sales}件</span>
+                    </p>
+                    </div>
+                    <div className='pages-detailspageShop-bodyEvaluation'>
+                            <p>商品评价({commitData != '没有数据' ? commitData.length : 0})</p>
+                        {
+                            commitData !== ''  ?  commitData !== '没有数据' ? 
+                                commitData.map((v,i) => {
+                                    return (
+                                        <div className='detailspageShop-bodyEvaluation-list' key={i}>
+                                            <p><span className='dS-list-img'><img src={v.head}></img></span>
+                                                <span className='detailspageShop-bodyEvaluation-listName'>{v.nickname}</span>
+                                            </p>
+                                            <p className='detailspageShop-bodyEvaluation-listD'>{v.content}</p>
+                                            <p>{v.times}</p>
+                                        </div>
+                                    )
+                                }) : <p>没有相关数据</p>
+                            : null  
+                        }
+                        <div className='look-more'>
+                            <NavLink to={`/details/evaluation/shop/${this.state.gid}`}>
+                                <button>查看更多评价</button>
+                            </NavLink>
+                        </div>
+                    </div>
+                </div>
+            } 
+            <div className='pages-detailspageShop-foot'>
+                <div className='detailspageShop-foot-but1'>
+                    <button>收藏</button>
+                </div>
+                <div className='detailspageShop-foot-but2'>
+                    <button onClick={this.fn}>加入购物车</button>
+                </div>
+            </div>
+            {
+                this.state.show?
+                <div className='Mask-layer'>
+                    <MaskLayer click={this.fn} gid={this.state.gid}/>
+                </div>
+                :null
+            }
+            
+        </div>
+        )
+    }
 }

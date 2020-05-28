@@ -1,9 +1,11 @@
 import React, { Component } from 'react'
 import { Avatar } from 'antd';
+import { withRouter } from 'react-router-dom'
 import Nav from '@@/Nav'
 import './styles.less'
 
-export default class Section extends Component {
+export default @withRouter
+class extends Component {
   state = {
     orderData: [
       {id: 1, title: '待支付', icon:'icon-daizhifu', to: '/'},
@@ -21,6 +23,7 @@ export default class Section extends Component {
 
   render() {
     const { orderData, userInformation} = this.state
+
     return (
       <div className='my-section'>
         <header className='header-user'>
@@ -35,7 +38,7 @@ export default class Section extends Component {
 
         <div className='order-form'>
           <span>全部订单</span>
-          <span>查看全部订单 ></span>
+          <span onClick={()=>this.props.history.push('/order')}>查看全部订单 ></span>
         </div>
 
         <div className='order-status'>

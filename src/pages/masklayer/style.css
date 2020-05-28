@@ -1,0 +1,156 @@
+*{
+  margin: 0;
+  padding: 0;
+}
+.pages-mask-layer{
+  width: 100%;
+  height: 100%;
+  overflow: auto;
+}
+
+.pages-maskLayer-foot{
+  width: 100%;
+  height: 1rem;
+  background: red;
+  position: absolute;
+  bottom: 100px;
+}
+.pages-maskLayer-foot button{
+  width: 100%;
+  height: 100%;
+  background: none;
+  border: none;
+  color: white;
+}
+#volet_clos{
+  width: 100%;
+  height: 100%;
+  position: fixed;
+  top: 0px;
+  left: 0
+}
+#volet{
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  top: 100px;
+  transition: all .5s ease-in;
+  background: gainsboro;
+}
+#volet:target a.fermer {display: none;}
+#volet_clos:target #volet {top:120%;}
+
+#volet a.fermer {
+  width: 0.4rem;
+  height: 0.4rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: white;
+  border-radius: 50px;
+  position: absolute;
+  right: 0.5rem;
+  top: -1rem;
+}
+
+
+.pages-maskLayer-Specifications{
+  width: 100%;
+  background: white;
+}
+.maskLayer-Specifications-head{
+  width: 100%;
+  display: flex;
+  border-bottom: 1px solid gainsboro;
+}
+.Specifications-head-img{
+  width: 1.5rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.Specifications-head-img img{
+  margin: 0.2rem;
+  width: 100%;
+  height: auto;
+}
+.Specifications-head-detailed{
+  width: 100%;
+}
+.Specifications-head-detailed p{
+  margin: 0.1rem;
+}
+.head-detailed-p1{
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+}
+.detailed-p1-span1{
+  color: red;
+}
+.detailed-p1-span2{
+  margin-right: 0.2rem;
+}
+.maskLayer-Specifications-body{
+  width: 100%;
+}
+.Specifications-body-p1{
+  width: 100%;
+  font-size: 0.4rem;
+  margin-left: 0.2rem;
+  margin-top: 0.2rem;
+}
+.Specifications-body-size{
+  width: 100%;
+  display: flex;
+  flex-wrap: wrap;
+  color: black;
+}
+.body-size-child{
+  background: gainsboro;
+  height: 0.7rem;
+  border-radius: 5px;
+  margin-left: 0.2rem;
+  margin-bottom: 0.1rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.body-size-child span{
+ margin: 0.2rem;
+}
+
+.maskLayer-Specifications-foot{
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0.2rem;
+}
+.Specifications-foot-comp{
+  width: 2.1rem;
+  display: flex;
+  align-items: center;
+  border: 1px solid black;
+  border-radius: 5px;
+}
+.Specifications-foot-comp button{
+  width: 0.7rem;
+  height: 0.7rem;
+  border: none;
+  background: none;
+}
+.Specifications-foot-comp input{
+  width: 0.7rem;
+  height: 0.5rem;
+  border: none;
+  background: none;
+  border: none;
+  border-left: 1px solid gray;
+  border-right: 1px solid gray;
+  text-align: center;
+}
+.on{
+  background: gold;
+  color: white;
+}

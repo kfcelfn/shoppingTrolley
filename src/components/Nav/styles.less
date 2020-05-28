@@ -1,18 +1,42 @@
 .components-nav{
-  .footer-nav{
+  #commonStyle{
     display: flex;
     justify-content: space-around;
-    padding: 0.05rem 0;
     margin: 0;
     background: #fff;
     .anticon{
       display: block;
       font-size: 0.35rem;
     }
-    .clear-nav{
-      color: black;
+    .list-nav{
+      flex: 1;
+      text-align: center;
     }
-    .active{color: red;}
-    .defaultColor{color: red;}
+  }
+  .clear-nav{
+    color: black;
+    width: 100%;
+  }
+  .home-nav-wrap{
+    padding: 0.05rem 0;
+    .home-nav{
+      .active{
+        color: red;
+      }
+    }
+  }
+  .list-nav-wrap{
+    border: 1px solid #efefef;
+    border-right: none;
+    border-left: none;
+    .list-nav{
+      .clear-nav{
+        display: inline-block;
+        padding: 0.2rem 0;
+      }
+      .active{
+        border-bottom: 1px solid red;
+      }
+    }
   }
 }
