@@ -1,0 +1,40 @@
+*{
+  margin: 0;
+  padding: 0;
+}
+.pages-detailspageEvaluation{
+  width: 100%;
+  height: 100%;
+  overflow: auto;
+}
+.pages-detailspageEvaluation-listHead{
+  margin: 0.2rem;
+  font-size: 0.3rem;
+}
+.pages-detailspageEvaluation-list{
+  width: 100%;
+}
+.pages-detailspageEvaluation-list img{
+  width: 0.5rem;
+  height: 0.5rem;
+  display: block;
+  border-radius: 50px;
+}
+.pages-detailspageEvaluation-list p{
+  display: flex;
+  margin-left: 0.2rem;
+  margin-right: 0.2rem;
+  margin-top: 0.1rem;
+}
+.pages-detailspageEvaluation-listName{
+  margin-left: 0.2rem;
+}
+.pages-detailspageEvaluation-ddd{
+  font-size: 0.3rem;
+  font-weight: bold;
+}
+.Hint{
+  width: 100%;
+  display: flex;
+  justify-content: center;
+}
