@@ -36,6 +36,11 @@ class extends Component {
 		homeListData()
 
 	}
+
+	myClick = (cid) => {
+		console.log(cid)
+	}
+
 	onScrollEvent = event => {
 		event.target.scrollTop > 50 ?
 			this.setState({ headerStyle: false }) :

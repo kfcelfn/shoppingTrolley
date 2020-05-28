@@ -3,11 +3,13 @@ import { connect } from 'react-redux'
 import { getFindData } from '@/actions/find'
 import HeaderInput from '@@/HeaderInput'
 import closefind from '@/assets/closefind.png'
+import findShop from '@/assets/findShop.png'
 import './styles.less'
 
 @connect(state => {
   return {
-    hotData: state.find.hotData
+    hotData: state.find.hotData,
+    latelyData: state.find.latelyData
   }
 }, {
   getFindData
@@ -25,12 +27,13 @@ class Index extends Component {
   }
 
   render() {
-    const { hotData } = this.props
+    const { hotData, latelyData } = this.props
     return (
       <div className="pages-find">
         <HeaderInput
           putText="请输入宝贝名称"
           imgUrl={closefind}
+          findUrl={findShop}
           type="find"
         />
         <div className="body">
@@ -45,21 +48,16 @@ class Index extends Component {
               </div>
             </div>
             <div className="lately-end">
-              <div className="keywords">
-                裙子
-              </div>
-              <div className="keywords">
-                电脑
-              </div>
-              <div className="keywords">
-                韩都衣舍
-              </div>
-              <div className="keywords">
-                裤子
-              </div>
-              <div className="keywords">
-                羽绒服
-              </div>
+              {
+                latelyData.length ?
+                latelyData.map(item => {
+                  return (
+                    <div className="keywords">
+                      {item}
+                    </div>
+                  )
+                }) : <p style={{fontSize: "0.23rem"}}>空空如也</p>
+              }
             </div>
           </div>
           <div className="hot-find">
