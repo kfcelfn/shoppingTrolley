@@ -1,8 +1,20 @@
 import React, { Component } from 'react'
 import { NavLink } from 'react-router-dom'
+import { connect } from 'react-redux'
+import { FindLately } from '@/actions/find'
 import './styles.less'
 
-export default class Index extends Component {
+
+
+@connect(state => {
+  return {
+
+  }
+}, {
+  FindLately
+})
+
+class Index extends Component {
 
   state = {
     putText: '', //输入框placeholder
@@ -14,6 +26,13 @@ export default class Index extends Component {
   componentDidMount() {
     const { putText, imgUrl, type, findUrl } = this.props
     this.setState({ putText, imgUrl, type, findUrl })
+  }
+
+  findLately = () => {
+    const putValue = this.refs.findPut.value
+    putValue === '' ? alert('输入框不能为空') : 
+    this.props.FindLately(putValue)
+    //在这里跳转
   }
 
   render() {
@@ -47,8 +66,11 @@ export default class Index extends Component {
                 </NavLink>
                 :
                 <div className='box'>
-                  <input type="text" placeholder={putText} />
-                  <div className='find-box'>
+                  <input type="text" placeholder={putText} ref="findPut" />
+                  <div 
+                    className='find-box'
+                    onClick={this.findLately}
+                  >
                     <img src={findUrl} alt=""/>
                   </div>
                 </div>
@@ -59,3 +81,5 @@ export default class Index extends Component {
     )
   }
 }
+
+export default Index

@@ -10,6 +10,7 @@ export const FETCH_CLASSIFY_DATA = 'FETCH_CLASSIFY_DATA' //左侧菜单数据
 
 //find
 export const FETCH_FIND_HOTDATA = 'FETCH_FIND_HOTDATA' //搜索页面热门数据
+export const FETCH_FIND_LATELY = 'FETCH_FIND_LATELY' //搜索页面最近搜索
 
 
 //登录
