@@ -1,6 +1,6 @@
 import React, { Component } from 'react'
 import { connect } from 'react-redux'
-import { addAction, detailsAction1,  } from '@/actions/details'
+import { addAction, detailsAction1, parameterAction  } from '@/actions/details'
 import './style.css'
 
 
@@ -12,6 +12,7 @@ export default @connect(state => {
     },{
         addAction,
         detailsAction1,
+        parameterAction
     })
 class index extends Component {
   state = {
@@ -113,8 +114,7 @@ class index extends Component {
             col:this.state.col,
             siz:this.state.siz,
         }
-       
-        console.log(parameter)
+        this.props.parameterAction(parameter)
     }
   }
   render() {

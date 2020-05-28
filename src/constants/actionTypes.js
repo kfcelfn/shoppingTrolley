@@ -8,4 +8,5 @@ export const DECIDE_COMMENT_DATA = 'DECIDE_COMMENT_DATA' //详情页评论数据
 export const DECIDE_COMMENT_DATA1 = 'DECIDE_COMMENT_DATA1' //详情页评论数据
 export const DECIDE_DETAILS_DATA1 = 'DECIDE_COMMENT_DATA1' //详情页详情数据
 export const DECIDE_ADD_DATA = 'DECIDE_ADD_DATA' //详情页详情数据
+export const DECIDE_PARAMETER_DATA = 'DECIDE_PARAMETER_DATA' //详情页详情数据
 
