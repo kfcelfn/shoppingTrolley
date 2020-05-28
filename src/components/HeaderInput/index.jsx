@@ -5,7 +5,6 @@ import { FindLately } from '@/actions/find'
 import './styles.less'
 
 
-
 @connect(state => {
   return {
 
@@ -35,6 +34,12 @@ class Index extends Component {
     //在这里跳转
   }
 
+
+
+  onBack = () => {
+    
+  }
+
   render() {
     const { putText, imgUrl, type, findUrl } = this.state
     return (
@@ -42,7 +47,7 @@ class Index extends Component {
         <div className="left">
           {
             type === 'find' ?
-              <NavLink to='/classify'>
+              <NavLink to='/classify/shops/492'>
                 <div>
                   <img src={imgUrl} alt="" />
                 </div>
