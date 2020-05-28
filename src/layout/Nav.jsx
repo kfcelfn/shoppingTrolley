@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import { renderRoutes } from 'react-router-config'
-import Nav from '@@/Nav'
+import { PubulicNav } from '@/router/assembly'
 import './styles.less'
 
 export default class Basic extends Component {
@@ -20,7 +20,7 @@ export default class Basic extends Component {
         <>
           {renderRoutes(this.props.route.children)}
         </>
-        <Nav data={navData} type='homeNav' />
+        <PubulicNav data={navData} type='homeNav' />
       </div>
     )
   }

@@ -11,9 +11,13 @@ export const FETCH_CLASSIFY_DATA = 'FETCH_CLASSIFY_DATA' //左侧菜单数据
 
 //find
 export const FETCH_FIND_HOTDATA = 'FETCH_FIND_HOTDATA' //搜索页面热门数据
+export const FETCH_FIND_LATELY = 'FETCH_FIND_LATELY' //搜索页面最近搜索
 
 //登录
 export const FETCH_LOGIN_INTO = 'FETCH_LOGIN_INTO'
+//退出登录
+export const FETCH_LOGIN_OUT = 'FETCH_LOGIN_OUT'
 
 //注册
 export const FETCH_REGISTER_INTO = 'FETCH_REGISTER_INTO'
+export const FETCH_REGISTER_VCODE = 'FETCH_REGISTER_VCODE'

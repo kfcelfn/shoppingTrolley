@@ -29,6 +29,7 @@ class Index extends Component {
 
   componentWillReceiveProps(nextProps) {
     const { cid } = nextProps.match.params
+    
     if (cid !== this.state.cid) {
       this.setState({
         cid

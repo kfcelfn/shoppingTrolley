@@ -32,18 +32,19 @@ class Login extends Component {
     }, () => {
       const { phoneStatus, pwdStatus  } = this.state
       if (!phoneStatus && !pwdStatus) {
-        alert('手机号不正确')
+        alert('手机号格式不正确')
       } else if (!phoneStatus) {
-        alert('手机号不正确')
+        alert('手机号格式不正确')
       } else if(!pwdStatus) {
-        alert('密码不正确')
+        alert('密码格式不正确')
       } else {
         this.props.getLoginInto(loginObj)
-          .then(() => {
-            const { code } = this.props.loginData
-            if (code === 200) {
+          .then( res => {
+            if (!res.uid) {
               alert('登录成功')
               this.props.history.push('/my')
+            } else {
+              alert('登录失败')
             }
           })
       }
