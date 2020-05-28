@@ -6,7 +6,7 @@ export default @withRouter
 class extends Component {
 
   particulars = () => {
-    this.props.history.push("/detailspageShop")
+    this.props.history.push("/detailspage/")
   }
   render() {
     let { data } = this.props

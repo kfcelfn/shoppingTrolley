@@ -47,4 +47,5 @@ export const Register = loadable(() => import('@/pages/register'));
 /** 搜索页面 
  *  详情
 */
+export const Searchs = loadable(() => import('@/pages/searchs'));
 export const Find = loadable(() => import('@/pages/find'));
