@@ -1,4 +1,4 @@
-import { FETCH_LOGIN_INTO } from '@/constants/actionTypes'
+import { FETCH_LOGIN_INTO, FETCH_LOGIN_OUT } from '@/constants/actionTypes'
 
 const defaultState = {
   loginData: {}
@@ -7,7 +7,11 @@ const defaultState = {
 export default function loginReducer (state = defaultState, action) {
   switch (action.type) {
     case FETCH_LOGIN_INTO:
-      return { ...state, loginData: action.payload  }
+      console.log(action.payload.data)
+      return { ...state, loginData: action.payload.data }
+
+    case FETCH_LOGIN_OUT:
+      return { ...state, loginData: {}  }
     default:
       return state
   }

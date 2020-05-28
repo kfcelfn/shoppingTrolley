@@ -1,13 +1,4 @@
 import React, { Component } from 'react'
-<<<<<<< HEAD
-
-export default class index extends Component {
-    render() {
-        return (
-            <div className="detailspageShop">
-                detailspageShop
-            </div>
-=======
 import { Swiperimg, MaskLayer } from '@/router/assembly'
 import { NavLink } from 'react-router-dom'
 import { connect } from 'react-redux'
@@ -102,7 +93,6 @@ class index extends Component {
             }
             
         </div>
->>>>>>> 9e07f34ec7d42f43cfe7a2fcd5b03e288a14edf3
         )
     }
 }

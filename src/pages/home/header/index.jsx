@@ -10,7 +10,7 @@ export default class index extends Component {
 		return (
 			<div className="header">    
 				<div className={headerStyle ? 'headerTop' : 'headerTops'}>
-					<Link to="/classify">
+					<Link to="/classify/shops/492">
 						<p><UnorderedListOutlined style={{fontSize:"0.4rem"}}/></p>
 					</Link>
 					<p><Input placeholder="请输入宝贝名称" prefix={<SearchOutlined />} /></p>

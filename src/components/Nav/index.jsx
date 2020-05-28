@@ -9,38 +9,49 @@ const IconFont = Icon.createFromIconfontCN({
 });
 
 /*
- * navData 你需要传入的数据
- * isShow 为true 是首页底部nav， flase 是订单页列表
+ * data 你需要传入的数据
+ * type 传入的页面，'homeNav'上下布局中nav 'myNav'我的页面nav
 */
+
 export default class Nav extends Component {
-  render() {
-    const { navData, isShow = true } = this.props
+  domBox = option => {
+    const { data } = this.props
 
     return (
+      <>
+        {
+          data.map(item => {
+            return (
+              <li className={option} key={item.id}>
+                <NavLink to={item.to} exact className='clear-nav'>
+                  <IconFont type={item.icon} />
+                  <span>{item.title}</span>
+                </NavLink>
+              </li>
+            )
+          })
+        }
+      </>
+    )
+  }
+
+  publicFn = () => {
+    const { type } = this.props
+
+    if( type == 'homeNav' ) {
+      return this.domBox('home-nav')
+
+    }else if( type == 'myNav' ){
+      return this.domBox('my-nav')
+
+    }
+  }
+
+  render() {
+    return (
       <div className='components-nav'>
-        <ul className={isShow ? 'home-nav-wrap' : 'list-nav-wrap'} id='commonStyle'>
-          {
-            navData.map(item => {
-              return (
-                <React.Fragment key={item.id}>
-                  {
-                    isShow ?
-                    <li className='home-nav'>
-                      <NavLink to={item.to} exact className='clear-nav'>
-                        <IconFont type={item.icon} />
-                        <span>{item.title}</span>
-                      </NavLink>
-                    </li> :
-                    <li className='list-nav'>
-                      <NavLink to={item.to} exact className='clear-nav'>
-                        <span>{item.title}</span>
-                      </NavLink>
-                    </li>
-                  }
-                </React.Fragment>
-              )
-            })
-          }
+        <ul className='navWrap'>
+           { this.publicFn() }
         </ul>
       </div>
     )

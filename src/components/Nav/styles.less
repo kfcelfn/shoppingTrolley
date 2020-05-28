@@ -1,29 +1,26 @@
 .components-nav{
-  #commonStyle{
+  .navWrap{
     display: flex;
     justify-content: space-around;
     margin: 0;
     background: #fff;
+    .clear-nav{
+      color: black;
+      width: 100%;
+    }
     .anticon{
       display: block;
-      font-size: 0.35rem;
     }
-    .list-nav{
-      flex: 1;
-      text-align: center;
-    }
-  }
-  .clear-nav{
-    color: black;
-    width: 100%;
-  }
-  .home-nav-wrap{
-    padding: 0.05rem 0;
     .home-nav{
+      padding: 0.05rem 0;
+      .anticon{
+        font-size: 0.4rem;
+      }
       .active{
-        color: red;
+        color: red; 
       }
     }
+<<<<<<< HEAD
   }
   .list-nav-wrap{
     border-bottom: 1px solid #efefef;
@@ -37,6 +34,12 @@
       }
       .active{
         border-bottom: 1px solid red;
+=======
+    .my-nav{
+      .anticon{
+        color: red;
+        font-size: 0.35rem;
+>>>>>>> 762ac22a125213e101cb56441108f8b8d8d035fe
       }
     }
   }

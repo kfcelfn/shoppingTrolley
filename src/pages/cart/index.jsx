@@ -1,13 +1,13 @@
 import React, { Component } from 'react'
 import { Checkbox } from 'antd';
-import Header from '@@/Header'
+import { PubulicHeader  } from '@/router/assembly'
 import './styles.less'
 
 export default class Cart extends Component {
   render() {
     return (
       <div className='pages-cart'>
-        <Header title='购物车'/>
+        <PubulicHeader  title='购物车' />
 
         <section className='section'>
  

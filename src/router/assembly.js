@@ -19,6 +19,12 @@ export const Cart = loadable(() => import('@/pages/cart'));
 export const PubulicNav = loadable(() => import('@/components/Nav'));
 export const PubulicHeader = loadable(() => import('@/components/Header'));
 
+/** components公共组件
+ *  Nav导航 
+*/
+export const PubulicNav = loadable(() => import('@/components/Nav'));
+export const PubulicHeader = loadable(() => import('@/components/Header'));
+
 /** 订单 
  *  Order首页 OrderStayPay待支付 OrderStayTake待收货  OrderStayEvaluate待评价 OrderAll全部订单主体页面
 */

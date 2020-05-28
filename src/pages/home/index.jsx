@@ -44,6 +44,11 @@ class extends Component {
 	myClick = (cid) => {
 		console.log(cid)
 	}
+
+	myClick = (cid) => {
+		console.log(cid)
+	}
+
 	onScrollEvent = event => {
 		event.target.scrollTop > 50 ?
 			this.setState({ headerStyle: false }) :

@@ -59,7 +59,6 @@ class Index extends Component {
           <div className="section-right">
             {/* 二级路由 */}
             {renderRoutes(this.props.route.children)}
-            <Redirect from='/classify' to='/classify/shops/492' />
           </div>
         </div>
       </div>
