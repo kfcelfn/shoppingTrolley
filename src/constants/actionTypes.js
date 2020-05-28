@@ -1,6 +1,6 @@
+  
 // 订单
 export const ORDER_ALL = 'ORDER_ALL'
-<<<<<<< HEAD
 export const ORDER_STAYEVALUATE = 'ORDER_STAYEVALUATE'
 
 // 个人中心
@@ -21,18 +21,11 @@ export const FETCH_LOGIN_OUT = 'FETCH_LOGIN_OUT'
 
 //注册
 export const FETCH_REGISTER_INTO = 'FETCH_REGISTER_INTO'
-<<<<<<< HEAD
-=======
-// classify
-export const FETCH_SHOPS_DATA = 'FETCH_SHOPS_DATA' //右侧商品数据
-export const FETCH_CLASSIFY_DATA = 'FETCH_CLASSIFY_DATA' //左侧菜单数据
+export const FETCH_REGISTER_VCODE = 'FETCH_REGISTER_VCODE'
+
 export const DECIDE_DETAILS_DATA = 'DECIDE_DETAILS_DATA' //详情页商品数据
 export const DECIDE_COMMENT_DATA = 'DECIDE_COMMENT_DATA' //详情页评论数据
 export const DECIDE_COMMENT_DATA1 = 'DECIDE_COMMENT_DATA1' //详情页评论数据
 export const DECIDE_DETAILS_DATA1 = 'DECIDE_COMMENT_DATA1' //详情页详情数据
 export const DECIDE_ADD_DATA = 'DECIDE_ADD_DATA' //详情页详情数据
-
->>>>>>> 9e07f34ec7d42f43cfe7a2fcd5b03e288a14edf3
-=======
-export const FETCH_REGISTER_VCODE = 'FETCH_REGISTER_VCODE'
->>>>>>> 762ac22a125213e101cb56441108f8b8d8d035fe
+export const DECIDE_PARAMETER_DATA = 'DECIDE_PARAMETER_DATA' //详情页详情数据

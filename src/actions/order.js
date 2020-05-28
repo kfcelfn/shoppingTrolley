@@ -14,7 +14,3 @@ export const getStayEvaluateData = () => {
     payload: orderStayEvaluate()
   }
 }
-
-export {
-  getAllData,
-}

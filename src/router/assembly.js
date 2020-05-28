@@ -1,4 +1,3 @@
-  
 import loadable from '@/utils/loadable.js'
 /** 错误
  * Error 404
@@ -18,12 +17,7 @@ export const Cart = loadable(() => import('@/pages/cart'));
 */
 export const PubulicNav = loadable(() => import('@/components/Nav'));
 export const PubulicHeader = loadable(() => import('@/components/Header'));
-
-/** components公共组件
- *  Nav导航 
-*/
-export const PubulicNav = loadable(() => import('@/components/Nav'));
-export const PubulicHeader = loadable(() => import('@/components/Header'));
+export const Swiperimg = loadable( () => import('@/components/swiperimg') );
 
 /** 订单 
  *  Order首页 OrderStayPay待支付 OrderStayTake待收货  OrderStayEvaluate待评价 OrderAll全部订单主体页面
@@ -61,3 +55,10 @@ export const Register = loadable(() => import('@/pages/register'));
  *  详情
 */
 export const Find = loadable(() => import('@/pages/find'));
+export const Searchs = loadable(() => import('@/pages/searchs'));
+
+export const DetailspageDet =loadable( () => import('@/pages/detailspageDet') );
+export const DetailspageEvaluation =loadable( () => import('@/pages/detailspageEvaluation') );
+export const DetailspageShop =loadable( () => import('@/pages/detailspageShop') );
+export const Details = loadable( () => import('@/pages/detailspage') );
+export const MaskLayer = loadable( () => import('@/pages/masklayer') ); 

@@ -1,3 +1,4 @@
+  
 import React, { Component } from 'react'
 import { Avatar } from 'antd';
 import { withRouter } from 'react-router-dom'
@@ -33,8 +34,6 @@ class extends Component {
 
   onLogin = () => {
     const { login } = this.props
-<<<<<<< HEAD
-=======
 
     if(login.uid) {
       console.log(11)
@@ -44,15 +43,7 @@ class extends Component {
     }
    
   }
->>>>>>> 762ac22a125213e101cb56441108f8b8d8d035fe
 
-    if(login.uid) {
-      console.log(11)
-      this.setState({visible: true})
-    }else{
-      this.props.history.push('/login')
-    }
-  }
   editData = url => {
     this.props.history.push(url)
   }
@@ -70,16 +61,6 @@ class extends Component {
     const { orderData, userInformation, visible } = this.state
     const { nickname='', uid='', utype = 0 } = this.props.login
 
-<<<<<<< HEAD
-  return (
-    <div className='my-section'>
-      <header className='header-user'>
-        <div className='user-image'>
-          <Avatar size={64} icon="user" />
-          <div className='nickname'>
-            <p><span>{ nickname ? nickname : '昵称'}</span></p>
-            <p><span>我的积分：{utype}</span></p>
-=======
     return (
       <div className='my-section'>
         <header className='header-user'>
@@ -89,53 +70,31 @@ class extends Component {
               <p><span>{ nickname ? nickname : '昵称'}</span></p>
               <p><span>我的积分：{utype}</span></p>
             </div>
->>>>>>> 762ac22a125213e101cb56441108f8b8d8d035fe
           </div>
-        </div>
-      </header>
+        </header>
 
-<<<<<<< HEAD
-      <div className='order-form'>
-        <span>全部订单</span>
-        <span onClick={()=>this.props.history.push('/order/all')}>查看全部订单 ></span>
-      </div>
-=======
+        <div className='order-form'>
+          <span>全部订单</span>
+          <span onClick={()=>this.props.history.push('/order/all')}>查看全部订单 ></span>
+        </div>
+
         <div className='order-status'>
           <PubulicNav data={orderData} type='myNav' />
         </div>
->>>>>>> 762ac22a125213e101cb56441108f8b8d8d035fe
 
-      <div className='order-status'>
-        <PubulicNav data={orderData} type='myNav' />
-      </div>
+        <div className='user-information'>
+          {
+            userInformation.map(item => {
+              return (
+                <p key={item.id} onClick={()=>this.editData(item.to)}>
+                  <span>{item.title}</span>
+                  <span><i>></i></span>
+                </p>
+              )
+            })
+          }
+        </div>
 
-      <div className='user-information'>
-        {
-          userInformation.map(item => {
-            return (
-              <p key={item.id} onClick={()=>this.editData(item.to)}>
-                <span>{item.title}</span>
-                <span><i>></i></span>
-              </p>
-            )
-          })
-        }
-      </div>
-
-<<<<<<< HEAD
-      <div className='loginAndRegister'>
-        <p onClick={this.onLogin}>{ uid ? '安全退出' : '登录/注册'}</p>
-      </div>
-
-      <div className={visible ? 'modelShow' : 'modelHide'}>
-        <div className='dialog_wrap'>
-          <div className='dialog_content'>
-            确定要退出么？
-          </div>
-          <div className='dialog_footer'>
-            <span className='dialog_cancel' onClick={this.onCancel}>取消</span>
-            <span className='dialog_text' onClick={this.onOk}>确定</span>
-=======
         <div className='loginAndRegister'>
           <p onClick={this.onLogin}>{ uid ? '安全退出' : '登录/注册'}</p>
         </div>
@@ -149,11 +108,9 @@ class extends Component {
               <span className='dialog_cancel' onClick={this.onCancel}>取消</span>
               <span className='dialog_text' onClick={this.onOk}>确定</span>
             </div>
->>>>>>> 762ac22a125213e101cb56441108f8b8d8d035fe
           </div>
         </div>
       </div>
-    </div>
     )
   }
 }
