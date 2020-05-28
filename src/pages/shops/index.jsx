@@ -29,6 +29,7 @@ class Index extends Component {
 
   componentWillReceiveProps(nextProps) {
     const { cid } = nextProps.match.params
+    console.log(cid )
     if (cid !== this.state.cid) {
       this.setState({
         cid
@@ -40,6 +41,7 @@ class Index extends Component {
 
   render() {
     const { shopData } = this.props
+    
     return (
       <div className="pages-shops">
         {
