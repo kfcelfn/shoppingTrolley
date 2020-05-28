@@ -29,11 +29,15 @@ class Index extends Component {
     const { listData } = this.props
     return (
       <div className="pages-goods">
+<<<<<<< HEAD
         <HeaderInput 
           putText="请输入宝贝名称" 
           imgUrl={goback}
           type="classify" 
         />
+=======
+        <HeaderInput putText="请输入宝贝名称" imgUrl={goback} />
+>>>>>>> 9e07f34ec7d42f43cfe7a2fcd5b03e288a14edf3
         <div className="section">
           <div className="section-left">
             {

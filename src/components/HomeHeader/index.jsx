@@ -14,6 +14,7 @@ export default class index extends Component {
               <UnorderedListOutlined style={{ fontSize: "0.4rem" }} />
             </NavLink>
           </p>
+          <p><UnorderedListOutlined style={{ fontSize: "0.4rem" }} /></p>
           <p><Input placeholder="请输入宝贝名称" prefix={<SearchOutlined />} /></p>
           <p>登录</p>
         </div>

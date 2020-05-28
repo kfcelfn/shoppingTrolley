@@ -17,7 +17,7 @@ const rootPersistConfig = {
   key: 'reduxData',
   storage,
   stateReconciler: autoMergeLevel2,
-  whitelist: ['']
+  whitelist: ['login']
 }
 
 const composeEnhancers = window.__REDUX_DEVTOOLS_EXTENSION_COMPOSE__ || compose  

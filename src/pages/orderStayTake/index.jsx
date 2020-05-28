@@ -8,4 +8,4 @@ export default class orderStayTake extends Component {
       </div>
     )
   }
-}
+}}

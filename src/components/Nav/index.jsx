@@ -5,6 +5,7 @@ import './styles.less'
 
 const IconFont = Icon.createFromIconfontCN({
   scriptUrl: '//at.alicdn.com/t/font_1838763_ceogqnmym26.js',
+  scriptUrl: '//at.alicdn.com/t/font_1838763_63cpoof6369.js',
 });
 
 /*

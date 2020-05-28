@@ -1,11 +1,12 @@
 import React, { Component } from 'react'
+import './styles.less'
 
 export default class Error extends Component {
   render() {
     return (
-      <div>
+      <div className='page_error'>
         404
-      </div>
+       </div>
     )
   }
 }
