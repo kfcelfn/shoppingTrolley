@@ -50,7 +50,7 @@ class extends Component {
         </div>
 
         <div className='order-status'>
-          <Nav navData={orderData} />
+          <Nav data={orderData} type='myNav' />
         </div>
 
         <div className='user-information'>

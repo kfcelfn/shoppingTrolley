@@ -20,7 +20,7 @@ export default class Basic extends Component {
         <>
           {renderRoutes(this.props.route.children)}
         </>
-        <Nav navData={navData} />
+        <Nav data={navData} type='homeNav' />
       </div>
     )
   }
