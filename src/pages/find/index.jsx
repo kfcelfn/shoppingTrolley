@@ -3,6 +3,7 @@ import { connect } from 'react-redux'
 import { getFindData } from '@/actions/find'
 import HeaderInput from '@@/HeaderInput'
 import closefind from '@/assets/closefind.png'
+import findShop from '@/assets/findShop.png'
 import './styles.less'
 
 @connect(state => {
@@ -31,6 +32,7 @@ class Index extends Component {
         <HeaderInput
           putText="请输入宝贝名称"
           imgUrl={closefind}
+          findUrl={findShop}
           type="find"
         />
         <div className="body">

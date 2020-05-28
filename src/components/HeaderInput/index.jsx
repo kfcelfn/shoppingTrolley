@@ -7,16 +7,17 @@ export default class Index extends Component {
   state = {
     putText: '', //输入框placeholder
     imgUrl: '', //图片地址
-    type: ''
+    type: '',
+    findUrl: ''
   }
 
   componentDidMount() {
-    const { putText, imgUrl, type } = this.props
-    this.setState({ putText, imgUrl, type })
+    const { putText, imgUrl, type, findUrl } = this.props
+    this.setState({ putText, imgUrl, type, findUrl })
   }
 
   render() {
-    const { putText, imgUrl, type } = this.state
+    const { putText, imgUrl, type, findUrl } = this.state
     return (
       <div className="common-headerinput">
         <div className="left">
@@ -30,6 +31,9 @@ export default class Index extends Component {
               <NavLink to='/'>
                 <div>
                   <img src={imgUrl} alt="" />
+                  <div className="find-box">
+            
+                  </div>
                 </div>
               </NavLink>
           }
@@ -42,7 +46,12 @@ export default class Index extends Component {
                   <input type="text" placeholder={putText} />
                 </NavLink>
                 :
-                <input type="text" placeholder={putText} />
+                <div className='box'>
+                  <input type="text" placeholder={putText} />
+                  <div className='find-box'>
+                    <img src={findUrl} alt=""/>
+                  </div>
+                </div>
             }
           </div>
         </div>
