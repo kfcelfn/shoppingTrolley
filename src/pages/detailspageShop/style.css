@@ -1,0 +1,114 @@
+*{
+  margin: 0;
+  padding: 0;
+}
+.pages-detailspageShop{
+  width: 100%;
+  height: 100%;
+  position: fixed;
+  display: flex;
+  flex-direction: column;
+  
+}
+.pages-detailspageShop-body{
+  flex:1;
+  overflow: auto;
+  background: gainsboro;
+}
+.detailspageShop-body-list{
+  width: 100%;
+  background: white;
+}
+.detailspageShop-body-list p{
+    padding-left: 0.2rem;
+    padding-right: 0.2rem;
+    padding-top: 0.1rem;
+}
+.detailspageShop-body-price{
+  color: red;
+  font-size: 0.3rem;
+}
+.detailspageShop-body-Express{
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding-bottom: 0.1rem;
+}
+.pages-detailspageShop-bodyEvaluation{
+  width:100% ;
+  background: white;
+  margin-top: 1rem;
+}
+.pages-detailspageShop-bodyEvaluation p{
+  padding-left: 0.2rem;
+  padding-right: 0.2rem;
+}
+.detailspageShop-bodyEvaluation-list{
+  width: 100%;
+}
+.detailspageShop-bodyEvaluation-listName{
+  margin-left: 0.2rem;
+}
+.detailspageShop-bodyEvaluation-listD{
+  font-size: 0.3rem;
+  font-weight: bold;
+}
+.dS-list-img img{
+  width: 0.5rem;
+  height: 0.5rem;
+  border-radius: 50px;
+}
+
+.look-more{
+  width: 100%;
+  display: flex;
+  justify-content: center;
+}
+.look-more button{
+  background: none;
+  border: none;
+  border: 1px solid red;
+}
+
+
+
+
+
+
+.pages-detailspageShop-foot{
+  width: 100%;
+  height: 1rem;
+  display: flex;
+  margin-bottom: 1rem;
+}
+.pages-detailspageShop-foot button{
+  background: none;
+  border: none;
+}
+.detailspageShop-foot-but1{
+  width: 100%;
+  height: 100%;
+  background: gold;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: white;
+}
+.detailspageShop-foot-but2{
+  width: 100%;
+  height: 100%;
+  background: red;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: white;
+}
+.Mask-layer{
+  width: 100%;
+  height:100%;
+  position:fixed;
+  background: rgba(175, 169, 169, 0.7);
+  top: 0;
+  z-index: 999;
+}

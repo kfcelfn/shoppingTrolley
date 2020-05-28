@@ -11,7 +11,7 @@ import { persistReducer } from 'redux-persist'
 import storage from 'redux-persist/lib/storage' 
 import autoMergeLevel2 from 'redux-persist/lib/stateReconciler/autoMergeLevel2' 
 
-import { order, classify, shops, find, homes, login, register, personalCenter  } from '@/reducer' 
+import { order, classify, shops, find, homes, login, register, personalCenter, details  } from '@/reducer' 
 
 const rootPersistConfig = {
   key: 'reduxData',
@@ -21,7 +21,6 @@ const rootPersistConfig = {
 }
 
 const composeEnhancers = window.__REDUX_DEVTOOLS_EXTENSION_COMPOSE__ || compose  
-
 
 const myPersistReducer = persistReducer(
   rootPersistConfig,
@@ -34,6 +33,7 @@ const myPersistReducer = persistReducer(
     login,
     register,
     personalCenter,
+    details
   })
 )
 

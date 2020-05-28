@@ -1,10 +1,23 @@
 import React, { Component } from 'react'
 import { Checkbox } from 'antd';
+import { connect } from 'react-redux'
 import { PubulicHeader  } from '@/router/assembly'
 import './styles.less'
 
-export default class Cart extends Component {
+export default @connect(state => {
+  return {
+    data:state.details.data,
+    parameterData:state.details.parameterData,
+  }
+})
+class Cart extends Component {
+  componentDidMount(){
+    // this.props.detailsAction1()
+    // this.props.parameterAction()
+    console.log(this.props)
+  }
   render() {
+    console.log(this.props)
     return (
       <div className='pages-cart'>
         <PubulicHeader  title='购物车' />
@@ -12,7 +25,6 @@ export default class Cart extends Component {
         <section className='section'>
  
         </section>
-
         <footer className='footer'>
           <div className='select-total'>
             <div className='select-all'>
