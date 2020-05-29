@@ -13,12 +13,7 @@ export default class index extends Component {
     data:[]
   }
   componentDidMount(){
-    axios.get('http://vueshop.glbuys.com/api/home/index/recom?token=1ec949a15fb709370f')
-    .then(res => {
-      this.setState({
-        data:res.data.data
-      })
-    })
+    
   }
   handleMenuClick = (e) => {
     console.log('click', e);

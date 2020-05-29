@@ -35,6 +35,7 @@ class Index extends Component {
 
   render() {
     const { putText, imgUrl, type, findUrl } = this.state
+    const { onChange } = this.props
     return (
       <div className="common-headerinput">
         <div className="left">
@@ -60,7 +61,11 @@ class Index extends Component {
             {
               type === 'classify' ?
                 <NavLink to='/find'>
-                  <input type="text" placeholder={putText} />
+                  <input 
+                    type="text" 
+                    placeholder={putText} 
+                    onChange={(e) => onChange(e)} 
+                  />
                 </NavLink>
                 :
                 <div className='box'>

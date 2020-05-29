@@ -1,36 +1,57 @@
 import React, { Component } from 'react'
 import { connect } from 'react-redux'
-import { getFindData } from '@/actions/find'
+import { getFindData , findSearch } from '@/actions/find'
 import HeaderInput from '@@/HeaderInput'
 import closefind from '@/assets/closefind.png'
 import findShop from '@/assets/findShop.png'
+import { findSearchData } from "../../services/find"
 import './styles.less'
 
 @connect(state => {
   return {
     hotData: state.find.hotData,
-    latelyData: state.find.latelyData
+    latelyData: state.find.latelyData,
+    searchData: state.find.searchData
   }
 }, {
-  getFindData
+  getFindData,
+  findSearch
 })
 
 class Index extends Component {
 
   state = {
-    //最近搜索
-    latelyFind: []
+    latelyFind: [] ,//最近搜索
   }
 
   componentDidMount() {
     this.props.getFindData()
   }
-
+  findRouter = (val) =>{
+    console.log(val)
+    findSearchData(latelyFind)
+    .then(res => {
+      console.log(res)
+      this.props.findSearch(res)
+    })
+    this.setState({
+      latelyFind:val
+    })
+  }
+  onChange = (e,latelyFind )=>{
+    console.log(e)
+    findSearchData(latelyFind)
+    .then(res => {
+      console.log(res)
+      this.props.findSearch(res)
+    })
+  }
   render() {
     const { hotData, latelyData } = this.props
     return (
       <div className="pages-find">
         <HeaderInput
+          onChange={this.onChange}
           putText="请输入宝贝名称"
           imgUrl={closefind}
           findUrl={findShop}
@@ -73,7 +94,11 @@ class Index extends Component {
                 hotData.length ?
                   hotData.map((item, index) => {
                     return (
-                      <div key={index} className="keywords">
+                      <div 
+                        key={index} 
+                        className="keywords"
+                        onClick={() => this.findRouter(item.title)} 
+                      >
                         {item.title === '' ? '空壳' : item.title}
                       </div>
                     )
