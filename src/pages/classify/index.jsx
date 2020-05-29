@@ -2,7 +2,7 @@ import React, { Component } from 'react'
 import goback from '@/assets/goback.png'
 import HeaderInput from '@@/HeaderInput'
 import { connect } from 'react-redux'
-import { NavLink, Redirect } from 'react-router-dom'
+import { NavLink } from 'react-router-dom'
 import { renderRoutes } from 'react-router-config'
 import { getClassifyData } from '@/actions/classify'
 import './styles.less'
@@ -30,9 +30,12 @@ class Index extends Component {
     return (
       <div className="pages-goods">
         <HeaderInput 
-          putText="请输入宝贝名称" 
-          imgUrl={goback}
-          type="classify" 
+          propertyObj={{
+            pageName: "classify",
+            img: { goback },
+            text: {  },
+            putText: "请输入宝贝名称"
+          }}
         />
         <div className="section">
           <div className="section-left">

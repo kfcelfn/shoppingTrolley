@@ -12,7 +12,7 @@ export default class index extends Component {
         <dd>
           <p>{data.title}</p>
           <p>￥{data.price}</p>
-          <p>销售<span>{data.cid}</span> 件</p>
+          <p>销售<span>{data.sales}</span> 件</p>
         </dd>
       </dl>
     </div>

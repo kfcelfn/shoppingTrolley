@@ -1,5 +1,13 @@
-import { findHotData } from '@/services/find'
-import { FETCH_FIND_HOTDATA, FETCH_FIND_LATELY ,FETCH_FIND_SEARCH } from '@/constants/actionTypes'
+import { 
+  findHotData ,
+  findSearchData ,
+} from '@/services/find'
+import { 
+  FETCH_FIND_HOTDATA, 
+  FETCH_FIND_LATELY ,
+  FETCH_FIND_SEARCH ,
+} from '@/constants/actionTypes'
+
 
 export function getFindData (options) {
   return {
@@ -7,7 +15,6 @@ export function getFindData (options) {
     payload: findHotData()
   }
 }
-
 export function FindLately (options) {
   return {
     type: FETCH_FIND_LATELY,
@@ -17,6 +24,6 @@ export function FindLately (options) {
 export function findSearch (options) {
   return {
     type: FETCH_FIND_SEARCH,
-    payload: options
+    payload: findSearchData(options)
   }
 }

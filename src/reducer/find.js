@@ -1,9 +1,13 @@
-import { FETCH_FIND_HOTDATA, FETCH_FIND_LATELY , FETCH_FIND_SEARCH} from '@/constants/actionTypes'
+import { 
+  FETCH_FIND_HOTDATA, 
+  FETCH_FIND_LATELY , 
+  FETCH_FIND_SEARCH ,
+} from '@/constants/actionTypes'
 
 const defaultState = {
   hotData: [],
   latelyData: [],
-  searchData: []
+  searchData: [],
 }
 
 export default function findReducer(state = defaultState, action) {
@@ -14,7 +18,7 @@ export default function findReducer(state = defaultState, action) {
       state.latelyData.push(action.payload)
       return { ...state, latelyData: state.latelyData }
     case FETCH_FIND_SEARCH:
-      return { ...state, searchData: action.payload }
+      return { ...state, searchData: action.payload.data }
     default:
       return state
   }

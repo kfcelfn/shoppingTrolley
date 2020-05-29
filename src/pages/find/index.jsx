@@ -4,58 +4,50 @@ import { getFindData , findSearch } from '@/actions/find'
 import HeaderInput from '@@/HeaderInput'
 import closefind from '@/assets/closefind.png'
 import findShop from '@/assets/findShop.png'
-import { findSearchData } from "../../services/find"
+import FindDle from "./findeDel"
 import './styles.less'
 
-@connect(state => {
+@connect(({ find }) => {
   return {
-    hotData: state.find.hotData,
-    latelyData: state.find.latelyData,
-    searchData: state.find.searchData
+    hotData: find.hotData,
+    latelyData: find.latelyData,
+    searchData: find.searchData,
   }
 }, {
   getFindData,
-  findSearch
+  findSearch,
 })
 
 class Index extends Component {
-
   state = {
     latelyFind: [] ,//最近搜索
   }
-
   componentDidMount() {
     this.props.getFindData()
   }
   findRouter = (val) =>{
-    console.log(val)
-    findSearchData(latelyFind)
-    .then(res => {
-      console.log(res)
-      this.props.findSearch(res)
-    })
-    this.setState({
-      latelyFind:val
-    })
+    const { findSearch , history} = this.props
+          findSearch(val)
+          history.push("/searchs")
   }
-  onChange = (e,latelyFind )=>{
-    console.log(e)
-    findSearchData(latelyFind)
-    .then(res => {
-      console.log(res)
-      this.props.findSearch(res)
-    })
+  onChange = ( val ) => {
+    let vales = val.value
+    const { findSearch , history} = this.props
+          findSearch(vales)
+          history.push("/searchs")
   }
   render() {
     const { hotData, latelyData } = this.props
     return (
       <div className="pages-find">
-        <HeaderInput
+        <HeaderInput 
           onChange={this.onChange}
-          putText="请输入宝贝名称"
-          imgUrl={closefind}
-          findUrl={findShop}
-          type="find"
+          propertyObj={{
+            pageName: "find",
+            img: { closefind, findShop },
+            text: {  },
+            putText: "请输入宝贝名称"
+          }}
         />
         <div className="body">
           <div className="lately-find">
@@ -65,7 +57,7 @@ class Index extends Component {
               </div>
               <div></div>
               <div>
-                <p>删除</p>
+                <FindDle/>
               </div>
             </div>
             <div className="lately-end">
