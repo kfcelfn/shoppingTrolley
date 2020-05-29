@@ -30,9 +30,12 @@ class Index extends Component {
     return (
       <div className="pages-goods">
         <HeaderInput 
-          putText="请输入宝贝名称" 
-          imgUrl={goback}
-          type="classify" 
+          propertyObj={{
+            pageName: "classify",
+            img: { goback },
+            text: {  },
+            putText: "请输入宝贝名称"
+          }}
         />
         <div className="section">
           <div className="section-left">

@@ -30,11 +30,13 @@ class Index extends Component {
     const { hotData, latelyData } = this.props
     return (
       <div className="pages-find">
-        <HeaderInput
-          putText="请输入宝贝名称"
-          imgUrl={closefind}
-          findUrl={findShop}
-          type="find"
+        <HeaderInput 
+          propertyObj={{
+            pageName: "find",
+            img: { closefind, findShop },
+            text: {  },
+            putText: "请输入宝贝名称"
+          }}
         />
         <div className="body">
           <div className="lately-find">
