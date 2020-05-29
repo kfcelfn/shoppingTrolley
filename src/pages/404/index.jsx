@@ -6,11 +6,7 @@ export default class Error extends Component {
     return (
       <div className='page_error'>
         404
-<<<<<<< HEAD
        </div>
-=======
-      </div>
->>>>>>> 8d5453392697296637caf2a5861691e374538dcc
     )
   }
 }
