@@ -24,7 +24,7 @@ export default class Nav extends Component {
             return (
               <li className={option} key={item.id}>
                 <NavLink to={item.to} exact className='clear-nav'>
-                  <IconFont type={item.icon} />
+                  <IconFont type={item.icon} className='icon' />
                   <span>{item.title}</span>
                 </NavLink>
               </li>
@@ -38,11 +38,11 @@ export default class Nav extends Component {
   publicFn = () => {
     const { type } = this.props
 
-    if( type == 'homeNav' ) {
+    if( type == 'homeNav' || type == 'myNav' ) {
       return this.domBox('home-nav')
 
-    }else if( type == 'myNav' ){
-      return this.domBox('my-nav')
+    }else if( type == 'listNav'){
+      return this.domBox('list-nav')
 
     }
   }
