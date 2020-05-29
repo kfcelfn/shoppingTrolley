@@ -5,8 +5,8 @@ import "./style.less"
 export default @withRouter
 class extends Component {
 
-  particulars = () => {
-    this.props.history.push("/detailspageShop")
+  particulars = (gid) => {
+    this.props.history.push("/details/"+gid)
   }
   render() {
     let { data } = this.props
@@ -16,7 +16,7 @@ class extends Component {
     return (
       <div className="home_Goods_chilLt">
         <div className="home_GoodsBoyLt">
-          <ul onClick={this.particulars}>
+          <ul onClick={()=>this.particulars(one[0].gid)}>
             <li> {one[0].title} </li>
             <li> ￥{one[0].price} </li>
             <li> <img src={one[0].image} /> </li>
@@ -25,7 +25,7 @@ class extends Component {
             {
               two.map((v, i) => {
                 return (
-                  <dl key={i} onClick={this.particulars}>
+                  <dl key={i} onClick={()=>this.particulars(v.gid)}>
                     <dd>
                       <p> {v.title} </p>
                       <p> 精品挑选 </p>
@@ -44,7 +44,7 @@ class extends Component {
                   <div 
                     className="home_Goodsfooter" 
                     key={index}
-                    onClick={this.particulars}
+                    onClick={()=>this.particulars(item.gid)}
                   >
                     <p> {item.title} </p>
                     <p><img src={item.image} /></p>

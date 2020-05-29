@@ -10,6 +10,7 @@ const routes = [
   { path: '/enshrine', component: type.MyEnshrine },
   { path: '/editPassword', component: type.MyEditPassword },
   { path: '/personalData', component: type.MyPersonalData },
+  { path: '/searchs', component: type.Searchs },
   { path: '/details', component: type.Details },
   { 
     path: '/order',
@@ -40,4 +41,3 @@ const routes = [
 ]
 
 export default routes
-

@@ -1,3 +1,4 @@
+  
 const url = 'http://vueshop.glbuys.com'
 
 export default {

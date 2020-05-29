@@ -29,18 +29,15 @@ class extends Component {
       </>
     )
   }
-
   // 回退
   goBack = () => {
     const { title } = this.props
-
     if( title == '全部订单' ){
       this.props.history.push('/my')
     }else{
       this.props.history.go(-1)
     }
   }
-
   render() {
     return (
       <div className='components-header'>
