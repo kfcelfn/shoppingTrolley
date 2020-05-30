@@ -18,7 +18,7 @@ export default function findReducer(state = defaultState, action) {
       state.latelyData.push(action.payload)
       return { ...state, latelyData: state.latelyData }
     case FETCH_FIND_SEARCH:
-      return { ...state, searchData: action.payload.data }
+      return { ...state, searchData: action.payload }
     default:
       return state
   }

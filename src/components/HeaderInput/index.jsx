@@ -14,7 +14,7 @@ import './styles.less'
 
 class Index extends Component {
   myInit = () => {
-    const { onChange } = this.props
+    const { onChange , gobackFun , findClik} = this.props
     const { pageName, img, putText, text  } = this.props.propertyObj
     if (pageName === 'classify') {
       const { goback } = img
@@ -69,7 +69,7 @@ class Index extends Component {
       return (
         <>
           <div className="left">
-            <div> 
+            <div onClick={gobackFun}> 
               <img src={goback} alt="" />
             </div>
           </div>
@@ -79,6 +79,7 @@ class Index extends Component {
           >
             <div className="put-box">
               <input 
+                onClick={findClik}
                 type="text" 
                 placeholder={putText} 
                 style={pageName === 'searchs' ? putStyle : {}}

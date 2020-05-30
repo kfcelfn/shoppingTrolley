@@ -5,6 +5,7 @@ import { connect } from "react-redux"
 import { findSearch } from '@/actions/find'
 import About from "./about"
 import HeaderInput from "@/components/HeaderInput"
+import goback from "@/assets/goback.png"
 import "./searchs.less"
 
 
@@ -59,7 +60,14 @@ class index extends Component {
       data: datas
     })
   }
-
+  gobackFun = () => {
+    const { history } = this.props
+      history.push('/home')
+  }
+  findClik = () => {
+    const { history } = this.props
+      history.push('/find')
+  }
   render() {
     let { searchData } = this.props
     let { classles , data } = this.state
@@ -68,10 +76,12 @@ class index extends Component {
       <div className="searchsInput">
         <HeaderInput 
           onChange={this.onChange}
+          gobackFun={this.gobackFun}
+          findClik={this.findClik}
           propertyObj={{
-            pageName: "search",
-            img: {  },
-            text: {  },
+            pageName: "searchs",
+            img: { goback },
+            text: { filter: '筛选' },
             putText: "请输入宝贝名称"
           }}
         />  
@@ -80,13 +90,22 @@ class index extends Component {
         <div className="filtrate">
           <Menu>
             <SubMenu key="sub1" icon={<DownOutlined/>} title="综合">
-              <Menu.Item key="1"><span onClick={() => this.up("ce0")}>综合</span></Menu.Item>
-              <Menu.Item key="2"><span onClick={() => this.up("ce1")}>价格从低到高</span></Menu.Item>
-              <Menu.Item key="3"><span onClick={() => this.up("ce2")}>价格从高到低</span></Menu.Item>
+              <Menu.Item key="1">
+                <span onClick={() => this.up("ce0")}>综合</span>
+              </Menu.Item>
+              <Menu.Item key="2">
+                <span onClick={() => this.up("ce1")}>价格从低到高</span>
+              </Menu.Item>
+              <Menu.Item key="3">
+                <span onClick={() => this.up("ce2")}>价格从高到低</span>
+              </Menu.Item>
             </SubMenu>
           </Menu>
         </div>
-        <p onClick={this.sales} className={classles!= '' ?'classles' :''}>销量</p>
+        <p 
+          onClick={this.sales} 
+          className={classles != '' ? 'classles' : ''}
+        >销量</p>
       </div>
       {
         searchData.code === 200 ?

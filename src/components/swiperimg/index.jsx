@@ -24,9 +24,9 @@ export default class index extends Component {
           <div className="swiper-wrapper">
               {
                   img?
-                  img.map(v=>{
+                  img.map((v,i)=>{
                       return (
-                          <div className="swiper-slide"><img src={v}/></div>
+                          <div className="swiper-slide" key={i}><img src={v}/></div>
                       )
                   })
                   :null
