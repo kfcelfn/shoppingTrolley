@@ -3,7 +3,8 @@
 	background: white;
 	margin-bottom: 0.02rem;
 	.home_GoodsBoyLt{
-		width: 100%;
+    width: 100%;
+    height: 3.4rem;
 		display: flex;
 		border: 0.01rem solid #eee;
 		ul{
@@ -17,23 +18,28 @@
 				white-space: nowrap;
 				overflow: hidden;
 				text-overflow: ellipsis;
+				font-size: 0.26rem;
+				font-weight: 900;
+				color: black;
 			}
 			li:nth-child(2){
-				color: rgb(145, 9, 9);;
+				font-weight: bold;
+        color: firebrick;
 				font-size: 0.27rem;
 			}
 			li:nth-child(3){
 				padding:0.1rem  0.15rem;
-				box-sizing: border-box;
+        box-sizing: border-box;
+        height: 3rem;
 				img{
 					width: 100%;
-					height: 2rem;
+					height: 70%;
 					display: block;
 				}
 			}		
 		}
 		.home_GoodsBoyRig{
-			width: 50%;
+      width: 50%;
 			border-left: 0.01rem solid #eee;
 			margin: 0 !important;
 			dl:nth-child(1){
@@ -41,36 +47,40 @@
 			}
 			dl{
 				width: 100%;
-				height: 50%;
+				height: 1.7rem;
 				display: flex;
 				margin: 0 !important;
 				padding: 0.2rem;
 				box-sizing: border-box;
 				dd{
 					width: 60%;
-					padding: 0.05rem;
+					padding: 0.1rem;
 					box-sizing: border-box;
 					p{
 						margin: 0 !important;
 					}
 					p:nth-child(1){
+						font-size: 0.26rem;
+						font-weight: 900;
+						color: black;
 						white-space: nowrap;
 						overflow: hidden;
 						text-overflow: ellipsis;
 					}
 					p:nth-child(2){
-						color: orangered;
+						font-size: 0.22rem;
+						color: gray;
 					}
 				}	
-        dt{
+				dt{
           width: 40%;
           margin: 0 !important;
           img{
             width: 100%;
             display:block;
-            height: auto;
+            height: 80%;
           }
-        }
+				}
 			}
 		}	
   }
@@ -86,12 +96,13 @@
 			p{
 				width: 100%;
 				margin: 0 !important;
-				padding: 0.05rem;
+				padding: 0.08rem;
 				box-sizing: border-box;
 			}
 			p:nth-child(1){
 				font-size: 0.22rem;
-				font-weight: 900;
+        font-weight: 900;
+        color: black;
 				white-space: nowrap;
 				overflow: hidden;
 				text-overflow: ellipsis;
@@ -103,11 +114,12 @@
 				img{
 						width: 100%;
 						display: block;
-						height: 1.5rem;
+						height: 1.7rem;
 				}
 			}
 			p:nth-child(3){
-				color:rgb(145, 9, 9);
+        font-weight: bold;
+        color: firebrick;
 			}
 		}   
 	}
@@ -126,14 +138,21 @@
 				width: 100%;
 			}
 			li:nth-child(1){
-				padding: 0.1rem;
+        padding:0.1rem 0.2rem;
+        box-sizing: border-box;
+        font-size: 0.26rem;
+        font-weight: 900;
+        color: black;
 				box-sizing: border-box;
 				white-space: nowrap;
 				overflow: hidden;
 				text-overflow: ellipsis;
 			}
 			li:nth-child(2){
-				color:orangered;
+        padding:0.05rem;
+        box-sizing: border-box;
+        font-size: 0.22rem;
+				color:gray;
 				text-align: center;
 			}
 			li:nth-child(3){
@@ -141,7 +160,7 @@
 				justify-content: center;
 				align-items: center;
 				img{
-					width: 70%;
+					width: 50%;
 					height: auto;
 					display: block;
 				}

@@ -22,8 +22,8 @@ class index extends Component {
 					</Link>
 					<p>
             <Input 
+            prefix={<SearchOutlined style={{fontSize:"0.22rem"}}/>} 
             placeholder="请输入宝贝名称" 
-            prefix={<SearchOutlined />} 
             onClick={this.searchs}
             />
           </p>
