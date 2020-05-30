@@ -15,7 +15,6 @@ export default class index extends Component {
                     <Route path='/details/evaluation' component={DetailspageEvaluation}/>
                     <Route path='/details/:gid' component={DetailspageShop}/>
                     <Redirect to='/details/shop'/>
-                    
                 </Switch>
             </div>
         )

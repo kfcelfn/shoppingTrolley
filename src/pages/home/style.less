@@ -1,4 +1,6 @@
 .pages_home{
+    flex: 1;
+    overflow: auto;
     width: 100%;
     height: 100%;
     background: #eee;
@@ -11,53 +13,60 @@
     }
     .pages_home_banner{
         width: 100%;
-        height: 20%;
+        height: 3rem;
     }
     .pages_home_nav{
-        margin: 0.2rem 0rem;
-        width: 100%;
-        display: flex;
-        justify-content: space-around;
-        background: white;
-        dl{
-            width: 20%;
-            padding: 0.1rem;
-            box-sizing: border-box;
-            dt{
-                width: 100%;
-                padding: 0.2rem;
-                box-sizing: border-box;
-                img{
-                    width: 100%;
-                    height: auto;
-                    display: block;
-                }
-            }
-            dd{
-                width: 100%;
-                text-align: center;
-                font-size: 0.23rem;
-                color: gray;
-            }
-        }
-    }
-    .pages_home_goods{
-        width: 100%;
-    }
-    .pages_home_list{
-        width: 100%;
-        .pages_home_listTop{
+      margin: 0.2rem 0rem;
+      width: 100%;
+      display: flex;
+      justify-content: space-around;
+      background: white;
+      dl{
+        width: 20%;
+        padding: 0.1rem;
+        box-sizing: border-box;
+        margin: 0 !important;
+        dt{
+          width: 100%;
+          padding:0.1rem 0.2rem;
+          box-sizing: border-box;
+          img{
             width: 100%;
-            text-align: center;
-            font-size: 0.3rem;
-            padding: 0.1rem;
-            box-sizing: border-box;
-            font-weight: 900;
+            height: auto;
+            display: block;
+          }
         }
-        .pages_home_listBoy{
-            width: 100%;
-            display: flex;
-            flex-wrap: wrap;
+        dd{
+          width: 100%;
+          text-align: center;
+          font-size: 0.23rem;
+          color: gray;
         }
+        dd{
+          width: 100%;
+          text-align: center;
+          font-size: 0.23rem;
+          color: gray;
+        }
+      }
+    } 
+  .pages_home_goods{
+    width: 100%;
+  }
+  .pages_home_list{
+    width: 100%;
+    .pages_home_listTop{
+      width: 100%;
+      text-align: center;
+      font-size: 0.3rem;
+      padding: 0.1rem;
+      box-sizing: border-box;
+      font-weight: 900;
     }
+    .pages_home_listBoy{
+      width: 100%;
+      display: flex;
+      flex-wrap: wrap;
+    }
+  }
 }

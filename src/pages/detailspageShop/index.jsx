@@ -5,7 +5,6 @@ import { connect } from 'react-redux'
 import { detailsAction, commentAction} from '@/actions/details'
 import './style.css'
 
-
 export default @connect(state => {
     return {
         data:state.details.data,
@@ -90,8 +89,7 @@ class index extends Component {
                     <MaskLayer click={this.fn} gid={this.state.gid}/>
                 </div>
                 :null
-            }
-            
+            }  
         </div>
         )
     }

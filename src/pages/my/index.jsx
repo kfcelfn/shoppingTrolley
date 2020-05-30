@@ -3,11 +3,11 @@ import Header from '@@/Header'
 import Section from './section'
 import './styles.less'
 
-export default class My extends Component {
+class My extends Component {
   render() {
     return (
       <div className='pages-my'>
-        <Header title='个人中心'/>
+        <Header title='个人中心' type='basics' />
 
         <section className='section'>
           <Section />
@@ -16,3 +16,5 @@ export default class My extends Component {
     )
   }
 }
+
+export default My

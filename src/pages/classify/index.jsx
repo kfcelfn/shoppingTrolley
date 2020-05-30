@@ -29,7 +29,11 @@ class Index extends Component {
     const { listData } = this.props
     return (
       <div className="pages-goods">
-        <HeaderInput putText="请输入宝贝名称" imgUrl={goback} />
+        <HeaderInput 
+          putText="请输入宝贝名称" 
+          imgUrl={goback}
+          type="classify" 
+        />
         <div className="section">
           <div className="section-left">
             {
@@ -51,7 +55,6 @@ class Index extends Component {
           <div className="section-right">
             {/* 二级路由 */}
             {renderRoutes(this.props.route.children)}
-            <Redirect from='/classify' to='/classify/shops/492' />
           </div>
         </div>
       </div>
@@ -60,5 +63,3 @@ class Index extends Component {
 }
 
 export default Index
-
-

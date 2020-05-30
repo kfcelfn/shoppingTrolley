@@ -1,0 +1,55 @@
+.page-enshrine{
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  .section{
+    flex: 1;
+    overflow: auto;
+    display: flex;
+    flex-wrap: wrap;
+    dl{
+      width: 50%;
+      padding: 0.2rem;
+      box-sizing: border-box;
+      dt{
+        height: 3rem;
+        display: flex;
+        align-items: center;
+      }
+      dd{
+        h2{
+          height: .8rem;
+          overflow: hidden;
+          font-size: .2rem;
+          margin-top: .2rem;
+        }
+        h6{
+          font-size: .28rem;
+          color: #f93036;
+          margin-top: .2rem;
+        }
+        p{
+          display: -webkit-box;
+          display: -ms-flexbox;
+          display: flex;
+          display: -webkit-flex;
+          -webkit-box-pack: justify;
+          -ms-flex-pack: justify;
+          justify-content: space-between;
+          -webkit-justify-content: space-between;
+          margin-top: .2rem;
+          span{
+            width: 1.04rem;
+            height: .52rem;
+            border: 1px solid #f93036;
+            font-size: .28rem;
+            color: #f93036;
+            border-radius: 4px;
+            text-align: center;
+            line-height: .52rem;
+          }
+        }
+      }
+    }
+  }
+}

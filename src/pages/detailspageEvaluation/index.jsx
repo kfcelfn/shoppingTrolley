@@ -27,12 +27,14 @@ export default @connect(state => {
                                 commitData1.map((v,i) => {
                                     return (
                                         <div className='pages-detailspageEvaluation-list' key={i}>
-                                            <p><img src={v.head}></img><span className='pages-detailspageEvaluation-listName'>
-                                                     {v.nickname}
+                                            <p>
+                                                <img src={v.head}/>
+                                                <span className='pages-detailspageEvaluation-listName'>
+                                                    {v.nickname}
                                                 </span>
                                             </p>
                                             <p className='pages-detailspageEvaluation-ddd'>
-                                                  {v.content}
+                                                {v.content}
                                             </p>
                                             <p>{v.times}</p>
                                         </div>

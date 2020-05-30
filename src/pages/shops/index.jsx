@@ -1,8 +1,8 @@
 import React, { Component } from 'react'
 import { connect } from 'react-redux'
 import { getShopData } from '@/actions/shops'
-import './styles.less'
 import { NavLink } from 'react-router-dom'
+import './styles.less'
 
 @connect(state => {
   return {
@@ -30,6 +30,7 @@ class Index extends Component {
 
   componentWillReceiveProps(nextProps) {
     const { cid } = nextProps.match.params
+    
     if (cid !== this.state.cid) {
       this.setState({
         cid
@@ -54,21 +55,21 @@ class Index extends Component {
                   <div className="end-box">
                     {
                       item.goods ?
-                      item.goods.map(childItem => {
-                        return (
-                          <NavLink key={childItem.gid} to={`/details/${childItem.gid}`}>
-                            <dl key={childItem.gid}>
-                              <dt>
-                                <div className='img-box'>
-                                  <img src={childItem.image} alt="" />
-                                </div>
-                              </dt>
-                              <dd>
-                                <span>{childItem.title}</span>
-                              </dd>
-                            </dl>
-                          </NavLink>
-                        )
+                        item.goods.map(childItem => {
+                          return (
+                            <NavLink key={childItem.gid} to={`/details/${childItem.gid}`}>
+                              <dl key={childItem.gid}>
+                                <dt>
+                                  <div className="img-box">
+                                    <img src={childItem.image} alt="" />
+                                  </div>
+                                </dt>
+                                <dd>
+                                  <span>{childItem.title}</span>
+                                </dd>
+                              </dl>
+                            </NavLink>
+                          )
                         }) : <p style={{ paddingLeft: "4.5%", fontSize: ".23rem" }}>
                               not-data
                              </p>
