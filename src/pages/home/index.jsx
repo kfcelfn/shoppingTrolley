@@ -79,6 +79,7 @@ class extends Component {
             )
           })
         }
+        
       </div>
       <div className="pages_home_goods">
         {
