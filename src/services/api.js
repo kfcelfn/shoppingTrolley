@@ -19,5 +19,5 @@ export default {
   loginInto: url+'/api/home/user/pwdlogin?token=1ec949a15fb709370f',
   //注册页面
   registerInto: url+'/api/home/user/reg?token=1ec949a15fb709370f',
-  registerVcode: url+'/api/vcode/chkcode?token=1ec949a15fb709370f'
+  registerVcode: url+'/api/vcode/chkcode?token=1ec949a15fb709370f',
 }

@@ -41,7 +41,10 @@ class extends Component {
       <div className='pages-order'>
         <Header isGoBack='show' title={obj[pathname]} />
         
-        <Nav data={listData} type='listNav' />
+        <nav className='nav'>
+          <Nav data={listData} type='listNav' />
+        </nav>
+        
 
         <section className='section'>
           {renderRoutes(this.props.route.children)}

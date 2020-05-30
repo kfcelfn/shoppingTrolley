@@ -41,7 +41,7 @@ export function post (url, data) {
       url,
       method: 'POST',
       // 添加公共的请求头
-      // headers: { token: '3333333333333' },
+      // headers: { token: '1ec949a15fb709370f' },
       data: qs.stringify(data),
     })
       .then(res => resolve(res.data))

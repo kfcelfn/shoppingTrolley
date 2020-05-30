@@ -9,6 +9,7 @@ export default class index extends Component {
     return (
       <div className='components-details'>
         <DetailHead />
+        
         <Switch>
           <Route path='/details/evaluation/shop/:gid' component={DetailspageEvaluation} />
           <Route path='/details/det' component={DetailspageDet} />

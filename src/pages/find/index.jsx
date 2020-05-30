@@ -1,36 +1,47 @@
 import React, { Component } from 'react'
 import { connect } from 'react-redux'
-import { getFindData } from '@/actions/find'
+import { getFindData , findSearch } from '@/actions/find'
 import HeaderInput from '@@/HeaderInput'
 import closefind from '@/assets/closefind.png'
 import findShop from '@/assets/findShop.png'
+import FindDle from "./findeDel"
 import './styles.less'
 
-@connect(state => {
+@connect(({ find }) => {
   return {
-    hotData: state.find.hotData,
-    latelyData: state.find.latelyData
+    hotData: find.hotData,
+    latelyData: find.latelyData,
+    searchData: find.searchData,
   }
 }, {
-  getFindData
+  getFindData,
+  findSearch,
 })
 
 class Index extends Component {
-
   state = {
-    //最近搜索
-    latelyFind: []
+    latelyFind: [] ,//最近搜索
   }
-
   componentDidMount() {
     this.props.getFindData()
   }
-
+  findRouter = (val) =>{
+    const { findSearch , history} = this.props
+          findSearch(val)
+          history.push("/searchs")
+  }
+  onChange = ( val ) => {
+    let vales = val.value
+    const { findSearch , history} = this.props
+          findSearch(vales)
+          history.push("/searchs")
+  }
   render() {
     const { hotData, latelyData } = this.props
     return (
       <div className="pages-find">
         <HeaderInput 
+          onChange={this.onChange}
           propertyObj={{
             pageName: "find",
             img: { closefind, findShop },
@@ -46,7 +57,7 @@ class Index extends Component {
               </div>
               <div></div>
               <div>
-                <p>删除</p>
+                <FindDle/>
               </div>
             </div>
             <div className="lately-end">
@@ -75,7 +86,11 @@ class Index extends Component {
                 hotData.length ?
                   hotData.map((item, index) => {
                     return (
-                      <div key={index} className="keywords">
+                      <div 
+                        key={index} 
+                        className="keywords"
+                        onClick={() => this.findRouter(item.title)} 
+                      >
                         {item.title === '' ? '空壳' : item.title}
                       </div>
                     )

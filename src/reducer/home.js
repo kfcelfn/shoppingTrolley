@@ -5,19 +5,19 @@ const defaultState = {
 	homeList: [],
 }
   
-export default function homeReducer ( state = defaultState , action ) {
-	switch (action.type) {
+export default function homeReducer ( state = defaultState , { type ,payload }) {
+	switch ( type ) {
 		case 'HOME_BANNER':
-			return { ...state, banners: action.payload.data  }
+			return { ...state, banners: payload.data  }
 			
 		case 'HOME_NAV':
-			return { ...state, navApi: action.payload.data  }
+			return { ...state, navApi: payload.data  }
 
 		case 'HOME_GOODS':
-			return { ...state, homeGoods: action.payload.data  }
+			return { ...state, homeGoods: payload.data  }
 
 		case 'HOME_LIST':
-			return { ...state, homeList: action.payload.data  }
+			return { ...state, homeList: payload.data  }
 
 		default:
 			return state

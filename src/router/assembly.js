@@ -13,7 +13,7 @@ export const Home = loadable(() => import('@/pages/home'));
 export const Cart = loadable(() => import('@/pages/cart'));
 
 /** components公共组件
- *  Nav导航 
+ *  Nav导航 Header头部 swiperimg轮播图 
 */
 export const PubulicNav = loadable(() => import('@/components/Nav'));
 export const PubulicHeader = loadable(() => import('@/components/Header'));

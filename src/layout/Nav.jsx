@@ -17,10 +17,13 @@ export default class Basic extends Component {
     const { navData } = this.state
     return (
       <div className='layout-nav'>
-        <>
+        <section className='section'>
           {renderRoutes(this.props.route.children)}
-        </>
-        <PubulicNav data={navData} type='homeNav' />
+        </section>
+
+        <footer className='footer-nav'>
+          <PubulicNav data={navData} type='homeNav' />
+        </footer>
       </div>
     )
   }

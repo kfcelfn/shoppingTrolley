@@ -1,35 +1,26 @@
 import { banners , navApi , homeGoods , homeList } from '@/services/home'
 
-function bannerData (options) {
+export function bannerData (options) {
   return {
     type: 'HOME_BANNER',
     payload: banners(options)
   }
 }
-
-function navApiData (options) {
+export function navApiData (options) {
 	return {
 		type: 'HOME_NAV',
 		payload: navApi(options)
 	}
 }
-
-function homeGoodsData (options) {
+export function homeGoodsData (options) {
 	return {
 		type: 'HOME_GOODS',
 		payload: homeGoods(options)
 	}
 }
-
-function homeListData (options) {
+export function homeListData (options) {
 	return {
 		type: 'HOME_LIST',
 		payload: homeList(options)
 	}
-}
-export {
-	bannerData,
-	navApiData,
-	homeGoodsData,
-	homeListData
 }

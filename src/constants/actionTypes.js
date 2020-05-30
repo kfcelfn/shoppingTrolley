@@ -13,8 +13,8 @@ export const FETCH_CLASSIFY_DATA = 'FETCH_CLASSIFY_DATA' //左侧菜单数据
 //find
 export const FETCH_FIND_HOTDATA = 'FETCH_FIND_HOTDATA' //搜索页面热门数据
 export const FETCH_FIND_LATELY = 'FETCH_FIND_LATELY' //搜索页面最近搜索
-
-//login登录
+export const FETCH_FIND_SEARCH = 'FETCH_FIND_SEARCH' //搜索页面宝贝名称
+//登录
 export const FETCH_LOGIN_INTO = 'FETCH_LOGIN_INTO'
 export const FETCH_LOGIN_OUT = 'FETCH_LOGIN_OUT'
 

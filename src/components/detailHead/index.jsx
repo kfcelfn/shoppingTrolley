@@ -16,12 +16,13 @@ export default @connect(state => {
     data: state.details.data
   }
 })
-class index extends Component {
+class extends Component {
   fn = () => {
     window.history.back(-1)
   }
   render() {
     const { data } = this.props
+
     return (
       <div className='components-detailHead'>
         <div className='components-detailHead-le'>

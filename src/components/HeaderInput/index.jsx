@@ -14,7 +14,9 @@ import './styles.less'
 
 class Index extends Component {
   myInit = () => {
-    const { pageName, img, putText, text } = this.props.propertyObj
+    const { onChange , gobackFun , findClik} = this.props
+    const { pageName, img, putText, text  } = this.props.propertyObj
+    
     if (pageName === 'classify') {
       const { goback } = img
       return (
@@ -48,10 +50,15 @@ class Index extends Component {
           </div>
           <div className="right">
             <div className="put-box">
-              <input className="find-Put" type="text" placeholder={putText} />
+              <input 
+                className="find-Put" 
+                type="text"
+                placeholder={putText}
+                ref="txt"
+              />
             </div>
             <div className='btn-box'>
-                <div><img src={findShop} alt=""/></div>
+                <div  onClick={()=> onChange(this.refs.txt)}><img src={findShop} alt=""/></div>
             </div>
           </div>
         </>
@@ -63,7 +70,7 @@ class Index extends Component {
       return (
         <>
           <div className="left">
-            <div>
+            <div onClick={gobackFun}> 
               <img src={goback} alt="" />
             </div>
           </div>
@@ -73,6 +80,7 @@ class Index extends Component {
           >
             <div className="put-box">
               <input 
+                onClick={findClik}
                 type="text" 
                 placeholder={putText} 
                 style={pageName === 'searchs' ? putStyle : {}}

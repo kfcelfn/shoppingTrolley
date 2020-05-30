@@ -14,20 +14,18 @@ const IconFont = Icon.createFromIconfontCN({
 */
 
 export default class Nav extends Component {
-  domBox = option => {
-    const { data } = this.props
-
+  domBox = data => {
     return (
       <>
         {
           data.map(item => {
             return (
-              <li className={option} key={item.id}>
+              <div className='nav-main' key={item.id}>
                 <NavLink to={item.to} exact className='clear-nav'>
-                  <IconFont type={item.icon} className='icon' />
+                  { item.icon ? <IconFont type={item.icon} className='icon' /> : <></> }
                   <span>{item.title}</span>
                 </NavLink>
-              </li>
+              </div>
             )
           })
         }
@@ -36,13 +34,13 @@ export default class Nav extends Component {
   }
 
   publicFn = () => {
-    const { type } = this.props
+    const { type, data } = this.props
 
     if( type == 'homeNav' || type == 'myNav' ) {
-      return this.domBox('home-nav')
+      return this.domBox(data)
 
-    }else if( type == 'listNav'){
-      return this.domBox('list-nav')
+    }else if(type == 'listNav'){
+      return this.domBox(data)
 
     }
   }
@@ -50,9 +48,7 @@ export default class Nav extends Component {
   render() {
     return (
       <div className='components-nav'>
-        <ul className='navWrap'>
-           { this.publicFn() }
-        </ul>
+        { this.publicFn() }
       </div>
     )
   }
