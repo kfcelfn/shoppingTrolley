@@ -16,10 +16,10 @@ export default @connect(({ homes }) => {
 		homelist: homes.homeList
 	}
 }, {
-	bannerData,
-	navApiData,
-	homeGoodsData,
-	homeListData
+    bannerData,
+    navApiData,
+    homeGoodsData,
+    homeListData
 })
 
 class extends Component {
@@ -40,11 +40,6 @@ class extends Component {
 		homeGoodsData()
 		homeListData()
 	}
-
-	myClick = (cid) => {
-		console.log(cid)
-	}
-
 	myClick = (cid) => {
 		console.log(cid)
 	}
@@ -57,7 +52,6 @@ class extends Component {
 
 	render() {
 		let { bannerDatas, navData, goodsData, homelist } = this.props
-
   return (
     <div 
       className="pages_home" 
@@ -68,8 +62,8 @@ class extends Component {
       </div>
       <div className="pages_home_banner">
         {
-          bannerData.length ? <Banner bannerData={bannerDatas} />
-                            : null
+          bannerDatas.length ? <Banner bannerDatas={bannerDatas} />
+                             : null
         }
       </div>
       <div className="pages_home_nav">

@@ -19,13 +19,12 @@ export default class index extends Component {
 		})        
 	}
 	render() {
-		let { bannerData } = this.props
-
+		let { bannerDatas } = this.props
 		return (
 			<div className="swiper-container">
 				<div className="swiper-wrapper">
 					{
-						bannerData.map((v,i) =>{
+						bannerDatas.map((v,i) =>{
 							return (
 								<div className="swiper-slide" key={i}>
 									<img src={v.image} />
