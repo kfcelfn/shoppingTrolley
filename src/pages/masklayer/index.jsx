@@ -3,7 +3,6 @@ import { connect } from 'react-redux'
 import { addAction, detailsAction1, parameterAction  } from '@/actions/details'
 import './style.css'
 
-
 export default @connect(state => {
     return {
         addToCarData:state.details.addToCarData,
@@ -20,12 +19,10 @@ class index extends Component {
     val:1,
     col:'',
     siz:'',
-    // sum:'',
     colVid:'',
-    sizVid:''
+    sizVid:'',
   }
   componentDidMount(){
-      console.log(this.props)
     const gid=this.props.gid
     this.props.addAction(gid)
     this.props.detailsAction1()
@@ -39,10 +36,6 @@ class index extends Component {
       this.setState({
         val:this.state.val+1
       })
-//    //总价格   
-//       this.setState({
-//           sum:this.props.data.price*this.state.val+this.props.data.price
-//       })
   }
   //点击减少数量
   less = () => {
@@ -67,22 +60,22 @@ class index extends Component {
       let color=[]
       let size=[]
       const listData=this.props.addToCarData.data
-     listData.map(v=>{
-         if(v.title==='颜色'){
+      listData.map(v=>{
+         if(v.title === '颜色'){
             color=( v.values.filter(v=>{
                 if(v.vid===xx){
                    return v
                 }
-             }))
+            }))
          }
-         else if(v.title==='尺寸'){
+         else if(v.title === '尺寸' || v.title === '屏幕尺寸' || v.title === '尺码' ||  v.title === '腰围'){
             size=( v.values.filter(v=>{
                 if(v.vid===xx){
                    return v
                 }
            }))
          }
-     })
+      })
      color.map(v=>{
          this.setState({
             col:v.value,
@@ -113,6 +106,10 @@ class index extends Component {
             val:this.state.val,
             col:this.state.col,
             siz:this.state.siz,
+            id:this.props.data.gid,
+            name:this.props.data.title,
+            price:this.props.data.price,
+            img:this.props.data.images[0]
         }
         this.props.parameterAction(parameter)
     }

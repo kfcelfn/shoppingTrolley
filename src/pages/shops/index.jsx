@@ -1,6 +1,7 @@
 import React, { Component } from 'react'
 import { connect } from 'react-redux'
 import { getShopData } from '@/actions/shops'
+import { NavLink } from 'react-router-dom'
 import './styles.less'
 
 @connect(state => {
@@ -56,16 +57,18 @@ class Index extends Component {
                       item.goods ?
                         item.goods.map(childItem => {
                           return (
-                            <dl key={childItem.gid}>
-                              <dt>
-                                <div className="img-box">
-                                  <img src={childItem.image} alt="" />
-                                </div>
-                              </dt>
-                              <dd>
-                                <span>{childItem.title}</span>
-                              </dd>
-                            </dl>
+                            <NavLink key={childItem.gid} to={`/details/${childItem.gid}`}>
+                              <dl key={childItem.gid}>
+                                <dt>
+                                  <div className="img-box">
+                                    <img src={childItem.image} alt="" />
+                                  </div>
+                                </dt>
+                                <dd>
+                                  <span>{childItem.title}</span>
+                                </dd>
+                              </dl>
+                            </NavLink>
                           )
                         }) : <p style={{ paddingLeft: "4.5%", fontSize: ".23rem" }}>
                               not-data

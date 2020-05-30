@@ -6,6 +6,8 @@ import "./styles.less"
 /* 传入参数： 
  * isGoBack 返回按钮，如果需要显示， 就传入show
  * titile 标题 
+ * type: 参数：basics 基础布局，只显示中间标题 
+ *             goBack 配合isGoBack使用
  * save 保存
 */
 export default @withRouter

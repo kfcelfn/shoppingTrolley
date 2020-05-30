@@ -45,7 +45,6 @@ class extends Component {
           <Nav data={listData} type='listNav' />
         </nav>
         
-
         <section className='section'>
           {renderRoutes(this.props.route.children)}
           {/* <Redirect to='/order/all' /> */}
