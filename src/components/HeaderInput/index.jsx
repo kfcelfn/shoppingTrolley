@@ -2,6 +2,7 @@ import React, { Component } from 'react'
 import { NavLink } from 'react-router-dom'
 import { connect } from 'react-redux'
 import { FindLately } from '@/actions/find'
+import { Shade } from '@/pages/shade'
 import './styles.less'
 
 @connect(state => {
@@ -87,7 +88,7 @@ class Index extends Component {
             </div>
           </div>
           <div className="last-right">
-            <span>{filter}</span>
+            <span><Shade filter={filter} /></span>
           </div>
         </>
       )
