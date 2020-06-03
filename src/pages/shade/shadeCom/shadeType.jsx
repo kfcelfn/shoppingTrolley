@@ -20,25 +20,11 @@ class index extends Component {
   }
   Shde = ( data ) => {
     let { listData } = this.props
-    let datas = false
-    let isdata = listData.filter(v => {
-      if(v.cid == data.cid){
-        console.log(v.cid ,data.cid)
-        return  datas = true
-      }else{
-        return  datas = false
-      }
-    })
-    if(isdata){}
-    this.setState({
-      onli:datas
-    })
+    
   }
   render() {
   let { listData } = this.props
   let { onli } = this.state
-  console.log(listData)
- 
     return (
       <div className="shadeType">
         <p>分类</p>

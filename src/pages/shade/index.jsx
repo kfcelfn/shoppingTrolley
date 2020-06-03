@@ -1,6 +1,5 @@
 import React, { useState } from 'react'
 import { Drawer } from 'antd'
-import axios from "axios"
 import ShadeType from "./shadeCom/shadeType"
 import ShadePrice from "./shadeCom/shadePrice"
 import ShadeBrand from "./shadeCom/shadeBrand"
@@ -15,10 +14,6 @@ export const Shade = () => {
   };
 
   const onClose = () => {
-    axios.get('http://vueshop.glbuys.com/api/home/goods/search?kwords=%E8%BF%9E%E8%A1%A3%E8%A3%99&param=[949,956]&page=1&price1=100&price2=200&otype=all&cid=492&token=1ec949a15fb709370f')
-      .then(res => {
-        console.log(res)
-      })
     setVisible(false);
   };
   
