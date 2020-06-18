@@ -15,6 +15,7 @@ export default class Basic extends Component {
 
   render() {
     const { navData } = this.state
+    
     return (
       <div className='layout-nav'>
         <section className='section'>

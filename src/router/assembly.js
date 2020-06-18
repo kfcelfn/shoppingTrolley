@@ -13,11 +13,7 @@ export const Home = loadable(() => import('@/pages/home'));
 export const Cart = loadable(() => import('@/pages/cart'));
 
 /** components公共组件
-<<<<<<< HEAD
  *  Nav导航 Header头部 swiperimg轮播图 
-=======
- *  Nav导航 
->>>>>>> 03b40000a26b8797f0da33d4b472b26b8de21711
 */
 export const PubulicNav = loadable(() => import('@/components/Nav'));
 export const PubulicHeader = loadable(() => import('@/components/Header'));
@@ -55,10 +51,6 @@ export const Register = loadable(() => import('@/pages/register'));
 
 /** 搜索页面 
  *  详情
-<<<<<<< HEAD
-=======
- *  Details详情页主页面  MaskLayer详情页加入购物车  DetailspageDet详情页的详情页 DetailspageShop详情页的商品页 DetailspageShop详情页的评论页
->>>>>>> 03b40000a26b8797f0da33d4b472b26b8de21711
 */
 export const Find = loadable(() => import('@/pages/find'));
 export const Searchs = loadable(() => import('@/pages/searchs'));
